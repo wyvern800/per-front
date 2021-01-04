@@ -6,7 +6,7 @@ export default function Formulario() {
   return (
     <>
     <section className="sectionBeco">
-    <div className="arroba">
+      <div className="arroba">
       <Form>
       <Form.Group>
         <Form.Control size="lg" type="text" placeholder="Large text" />
