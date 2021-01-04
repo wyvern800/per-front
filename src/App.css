@@ -35,6 +35,15 @@ Nav a {
 }
 
 Nav a:active {
+  font-weight: bold;
+}
+
+Nav a:hover{
   text-decoration: none;
-  color: red;
+  color: gold;
+}
+
+.imgLogo {
+  width: 180px;
+  height: 80px;
 }

@@ -1,14 +1,10 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter } from 'react-router-dom';
 import api from "./services/api";
 
-import Home from "./routes/Home";
-import About from "./routes/About";
+import Header from "./assets/components/Header"
 
-import { Navbar, Nav } from "react-bootstrap";
-
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
-import { withRouter, Match } from "react-router";
+import Routes from './routes';
 
 import "./App.css";
 
@@ -40,51 +36,13 @@ function App() {
     });
   }, []);
 
-  async function handleAddProject() {
-    // copia os valores antigos dos projetos com spread (...projects)
-    //setProjects([...projects, `Novo projeto ${Date.now()}`]);
-
-    const response = await api.post("characters", {
-      title: `Novo projeto ${Date.now()}`,
-      owner: "biker",
-    });
-    //console.log(projects);
-    const character = response.data; // dados provenientes da response
-
-    setCharacters([...characters, character]);
-  }
-
-  const Header = (props) => {
-    const { location } = props;
-    return (
-      <Navbar bg="dark" variant="dark">
-        <Navbar.Brand>Godzamy</Navbar.Brand>
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav activeKey={window.location.pathname}>
-            <Link to ="/">Home</Link>
-            <Link to ="/about">About</Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-    );
-  };
-
-  const HeaderWithRouter = withRouter(Header);
-
   // Com o mesmo nome do arquivo
   return (
     <>
-      <Router>
-          <HeaderWithRouter />
-          <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-        </Switch>
-      </Router>
+      <BrowserRouter>
+        <Header />
+        <Routes />
+      </BrowserRouter>
     </>
   );
 }
