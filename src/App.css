@@ -28,6 +28,13 @@ body, html {
 }
 
 Nav a {
+  text-decoration: none;
+  color: white;
   margin-left: 10px;
   margin-right: 10px;
+}
+
+Nav a:active {
+  text-decoration: none;
+  color: red;
 }
