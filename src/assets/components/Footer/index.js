@@ -5,7 +5,7 @@ import { Navbar, Nav } from 'react-bootstrap';
 
 import logo from '../../../assets/logo.png';
 
-function Header() {
+function Footer() {
   return (
     <Navbar bg="dark" variant="dark" sticky="top">
         <Navbar.Brand><img src={logo} className="imgLogo"/></Navbar.Brand>
@@ -19,4 +19,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default Footer;
