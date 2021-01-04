@@ -24,12 +24,12 @@ module.exports = {
             use: [{ loader: "style-loader" }, { loader: "css-loader" }],
      },
      {
-      test: /.*\.(gif|png|jpe?g)$/i, // Pode haver quantos caracteres quiser, escapa o . , pega todos os tipos de imagem, e o i é para pegar case insensitive
-      //não precisa do exclude node modules pq não tem imagem dentro do node-modules
-      use: {
-        loader: 'file-loader',
-      }
-    }      
+  test: /.*\.(gif|png|jpe?g)$/i, // Pode haver quantos caracteres quiser, escapa o . , pega todos os tipos de imagem, e o i é para pegar case insensitive
+  //não precisa do exclude node modules pq não tem imagem dentro do node-modules
+  use: {
+    loader: 'file-loader',
+  }
+},      
     ]
   },
 };

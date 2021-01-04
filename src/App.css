@@ -1,12 +1,25 @@
-* {
-  margin: 0;
-  padding: 0;
-  outline: 0;
-  box-sizing: border-box;
+body, html {
+  background-image: url("./assets/background.jpg");
+  background-color: rgb(26,27,31);
+  width: 100%;
+  height: 100%;
+  margin: auto;
 }
 
-body {
-  background: #F5F5F5;
-  font: 14px sans-serif;
-  color: #333;
+.characterSearchBar {
+  width: 100%;
+}
+
+.sectionBeco {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.arroba {
+  width: 70%;
+  color: #fff;
+  margin-top: 50px;
+  display: inline-block;
 }

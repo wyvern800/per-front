@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
+import Formulario from "./components/Formulario";
 import api from "./services/api";
+import { Button, Alert } from 'react-bootstrap';
 
 import "./App.css";
 
@@ -49,16 +51,8 @@ function App() {
   // Com o mesmo nome do arquivo
   return (
     <>
-      <Header title="Characters">
-        <ul>
-          {characters.map((character) => (
-            <li key={character.id}>{character.name}</li>
-          ))}
-        </ul>
-        <button type="button" onClick={handleAddProject}>
-          Adicionar projeto
-        </button>
-      </Header>
+      <Header/>
+      <Formulario/>
     </>
   );
 }
