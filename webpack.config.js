@@ -8,6 +8,7 @@ module.exports = {
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'public'), // caminho pro diretório onde contém os arquivos públicos da aplicação
+    historyApiFallback: true
   },
   module: {
     rules: [

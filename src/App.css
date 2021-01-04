@@ -30,4 +30,19 @@ body, html {
 Nav a {
   margin-left: 10px;
   margin-right: 10px;
+  text-decoration: none;
+}
+
+Nav a:active {
+  font-weight: bold;
+}
+
+Nav a:hover{
+  text-decoration: none;
+  color: gold;
+}
+
+.imgLogo {
+  width: 180px;
+  height: 80px;
 }
