@@ -29,6 +29,13 @@ class Home extends Component {
             <span>
             {character.name}
             </span>
+            <ul>
+            {character.skills.map(skill=>(
+                <li key={skill.id}>
+                <span>{skill.name}</span>
+                </li>
+            ))}
+            </ul>
           </li>
         ))}
       </>
