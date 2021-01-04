@@ -1,8 +1,14 @@
-import React, { useState, useEffect } from "react";
-import Header from "./components/Header";
-import Formulario from "./components/Formulario";
+import React, { useState, useEffect, Fragment } from "react";
 import api from "./services/api";
-import { Button, Alert } from 'react-bootstrap';
+
+import Home from "./routes/Home";
+import About from "./routes/About";
+
+import { Navbar, Nav } from "react-bootstrap";
+
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+import { withRouter, Match } from "react-router";
 
 import "./App.css";
 
@@ -48,11 +54,37 @@ function App() {
     setCharacters([...characters, character]);
   }
 
+  const Header = (props) => {
+    const { location } = props;
+    return (
+      <Navbar bg="dark" variant="dark">
+        <Navbar.Brand>Godzamy</Navbar.Brand>
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav activeKey={window.location.pathname}>
+            <Link to ="/">Home</Link>
+            <Link to ="/about">About</Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+    );
+  };
+
+  const HeaderWithRouter = withRouter(Header);
+
   // Com o mesmo nome do arquivo
   return (
     <>
-      <Header/>
-      <Formulario/>
+      <Router>
+          <HeaderWithRouter />
+          <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+        </Switch>
+      </Router>
     </>
   );
 }

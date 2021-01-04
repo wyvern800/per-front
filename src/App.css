@@ -26,3 +26,8 @@ body, html {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
+Nav a {
+  margin-left: 10px;
+  margin-right: 10px;
+}
