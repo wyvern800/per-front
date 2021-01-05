@@ -5,18 +5,12 @@ import Card from 'react-bootstrap/Card'
 import CardDeck from 'react-bootstrap/CardDeck'
 import box01 from '../../assets/box-01.jpg';
 import box02 from '../../assets/box-02.jpg';
-
-// import { Container } from './styles';
+import PageHeader from '../../assets/components/PageHeader';
 
 export default function Home() {
   return (
     <>
-<div className="box-home">
-    <div className="box-text">
-      <span className="fadeIn-fast">Bem vindos ao <span className="pink">ETBS</span></span>
-      <p className="fadeIn-slow">Digite abaixo o nome do personagem que deseja obter informações de <span className="gold">ouro!</span></p>
-    </div>
-</div>
+      <PageHeader titleOne="Bem vindos ao" titleTwo="ETBS" descOne="Digite abaixo o nome do personagem que deseja obter informações de" descTwo="ouro!"/>
       <div className="d-flex flex-row justify-content-center">
         <AutoComplete />
       </div>
