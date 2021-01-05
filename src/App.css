@@ -7,6 +7,7 @@ body, html {
   background-color: rgb(26,27,31);
   width: 100%;
   height: 100%;
+  padding: 0;
   margin: 0;
 }
 
@@ -19,16 +20,6 @@ body, html {
   justify-content: center;
   align-items: center;
   width: 100%;
-}
-
-.arroba {
-  width: 25%;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
 }
 
 Nav a {
@@ -58,13 +49,11 @@ Nav a:hover{
   display: flex;
   text-align: center;
   justify-content: center;
-  align-items: center;
-  width: 100%;
 }
 .div-characters-list ul {
-  width: 1170px;
-  height: 500px;
-  margin-left: -50px;
+  width: 1185px;
+  height: 100%;
+
 }
 
 .div-characters-list li {
@@ -101,15 +90,34 @@ Nav a:hover{
 
 /* Rodapé */
 .footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: red;
-  color: white;
+  position: sticky;
+  background-color: #efefef;
   text-align: center;
 }
 
-.main-nav-active {
-  color: tomato !important;
+.content {
+  min-height: 90vh;
+}
+
+@media (max-width: 700px) {
+  Nav a {
+    font-size: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .div-characters-list {
+    margin-left: -35px;
+  }
+  .imgLogo {
+    width: 100px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 400px) {
+  Nav a {
+    font-size: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 }
