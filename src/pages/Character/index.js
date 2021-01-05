@@ -29,17 +29,13 @@ class Home extends Component {
 
     return (
       <>
-        <div>
-          <Jumbotron fluid>
-            <Container>
-              <h1 className="text-center">Todos os personagens!</h1>
-              <p className="text-center">
-                Clique no seu preferido e venha se aprender mais sobre ele!
-              </p>
-            </Container>
-          </Jumbotron>
-        </div>
-        <div className="div-characters-list">
+<div className="box-characters-list">
+    <div className="box-text">
+      <span className="fadeIn-fast">Escolha um personagem</span>
+      <p className="fadeIn-slow">Clique em um personagem abaixo e aprenda tudo sobre ele!</p>
+    </div>
+</div>
+        <div className="div-characters-list fadeIn-fast-fast">
         {this.state.loading ? (<Loading/>) : 
           <>
             <ul>
@@ -48,7 +44,7 @@ class Home extends Component {
                   <Link to={`/characters/${character.slug}`}>
                     <Image src={character.characterIcon} rounded />
                   </Link>
-                  <p className="character-name">{character.name}</p>
+                  <p className="character-name fadeIn-fast-fast">{character.name}</p>
                 </li>
               ))}
             </ul>

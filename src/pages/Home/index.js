@@ -13,8 +13,8 @@ export default function Home() {
     <>
 <div className="box-home">
     <div className="box-text">
-      <h1>Bem vindos ao ETBS</h1>
-      <p>Digite abaixo o nome do personagem que deseja obter informações de ouro</p>
+      <span className="fadeIn-fast">Bem vindos ao <span className="pink">ETBS</span></span>
+      <p className="fadeIn-slow">Digite abaixo o nome do personagem que deseja obter informações de <span className="gold">ouro!</span></p>
     </div>
 </div>
       <div className="d-flex flex-row justify-content-center">
@@ -28,7 +28,7 @@ export default function Home() {
       <Card.Title>Card title</Card.Title>
       <Card.Text>
         This is a wider card with supporting text below as a natural lead-in to
-        additional content. This content is a little bit longer.
+        additional content. This content is a.
       </Card.Text>
     </Card.Body>
   </Card>
@@ -48,8 +48,7 @@ export default function Home() {
       <Card.Title>Card title</Card.Title>
       <Card.Text>
         This is a wider card with supporting text below as a natural lead-in to
-        additional content. This card has even longer content than the first to
-        show that equal height action.
+        additional content. This card has even.
       </Card.Text>
     </Card.Body>
   </Card>
