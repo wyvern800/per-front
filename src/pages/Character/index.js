@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 
 import api from "../../services/api";
-import Jumbotron from 'react-bootstrap/Jumbotron'
-import Container from 'react-bootstrap/Container'
-import Image from 'react-bootstrap/Image'
+import Jumbotron from "react-bootstrap/Jumbotron";
+import Container from "react-bootstrap/Container";
+import Image from "react-bootstrap/Image";
+import Loading from "../../assets/components/Loading";
 
 class Home extends Component {
   state = {
     characters: [],
+    loading: true,
   };
 
   async componentDidMount() {
@@ -15,11 +17,11 @@ class Home extends Component {
 
     const response = await api.get(`characters/?charId=${id}`);
 
-    const data = response.data.map(character => ({
-      ...character
+    const data = response.data.map((character) => ({
+      ...character,
     }));
 
-    this.setState({ characters: data });
+    this.setState({ characters: data, loading: false });
   }
 
   render() {
@@ -27,25 +29,29 @@ class Home extends Component {
 
     return (
       <>
-      <div>
-      <Jumbotron fluid>
-  <Container>
-    <h1 className="text-center">Todos os personagens!</h1>
-    <p className="text-center">
-      Clique no seu preferido e venha se aprender mais sobre ele!
-    </p>
-  </Container>
-</Jumbotron>
-      </div>
+        <div>
+          <Jumbotron fluid>
+            <Container>
+              <h1 className="text-center">Todos os personagens!</h1>
+              <p className="text-center">
+                Clique no seu preferido e venha se aprender mais sobre ele!
+              </p>
+            </Container>
+          </Jumbotron>
+        </div>
         <div className="div-characters-list">
-          <ul>
-            {characters.map(character => (
-              <li key={character.id}>
+        {this.state.loading ? (<Loading/>) : 
+          <>
+            <ul>
+              {characters.map((character) => (
+                <li key={character.id}>
                   <Image src={character.characterIcon} rounded />
                   <p className="character-name">{character.name}</p>
-              </li>
-            ))}
-          </ul>
+                </li>
+              ))}
+            </ul>
+          </>
+          }
         </div>
       </>
     );
