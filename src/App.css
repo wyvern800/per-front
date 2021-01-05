@@ -1,9 +1,12 @@
+* {
+  font-family: 'Viga', sans-serif;
+}
+
 body, html {
   background-image: url("./assets/background.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  font-family: 'Abel', sans-serif;
   background-color: rgb(26,27,31);
   width: 100%;
   height: 100%;
@@ -28,14 +31,17 @@ Nav a {
   font-size: 30px;
   margin-left: 10px;
   margin-right: 10px;
+  opacity: 0.6;
+  transition: 0.3s;
 }
 
 Nav a:active {
-  font-weight: bold;
+  opacity: 1;
 }
 
 Nav a:hover{
   text-decoration: none;
+  opacity: 1;
   color: gold;
 }
 
@@ -70,15 +76,17 @@ Nav a:hover{
   border: 1px solid white;
   width: 170px;
   height: 231px;
-}
-
-h1.infoCharName{
-  color: white;
+  opacity: 0.6;
+  transition: 0.3s;
 }
 
 .div-characters-list li img:hover {
   cursor: pointer;
-  box-shadow: inset 0 0 1em black, 0 0 1em yellow;
+  opacity: 1;
+}
+
+h1.infoCharName{
+  color: white;
 }
 
 .character-name{
@@ -94,9 +102,14 @@ h1.infoCharName{
 /* Rodapé */
 .footer {
   position: sticky;
-  background-color: #efefef;
+  background-color: rgba(0, 0, 0, 0.178);
+  color: white;
   text-align: center;
   margin-top: 10px;
+}
+
+.footer p {
+  font-size: 15px;
 }
 
 .content {
@@ -104,28 +117,34 @@ h1.infoCharName{
 }
 
 .card {
-  margin-top: 250px;
-  width: 500px;
+  margin-top: 320px;
+  width: 250px;
 }
 
 .box-text{
   position: absolute;
   text-align: center;
-  top: 50%;
+  top: 100%;
   left: 50%;
+  color: white;
   transform: translate(-50%, -50%);
+  transition: width 2s;
 }
 
 .box-home{
   position: relative;
   width: 100%;
   height: 100px;
-  background-color: aqua; 
 }
 
 .box-img {
   width: 100%;
-  height: 300px;
+  height: 150px;
+}
+
+.autocomplete {
+  position:absolute;
+  top:30%;
 }
 
 @media (max-width: 700px) {
@@ -141,13 +160,14 @@ h1.infoCharName{
     width: 100px;
     height: 50px;
   }
+  
   div#app {
     width: 100%;
     height: 100%;
   }
   .card {
     margin-top: 120px;
-    width: 200px;
+    width: 100px;
   }
   .box-img {
     width: 100%;

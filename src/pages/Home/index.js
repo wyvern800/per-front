@@ -13,8 +13,8 @@ export default function Home() {
     <>
 <div className="box-home">
     <div className="box-text">
-      <h1>Título</h1>
-      <p>Parágrafo</p>
+      <h1>Bem vindos ao ETBS</h1>
+      <p>Digite abaixo o nome do personagem que deseja obter informações de ouro</p>
     </div>
 </div>
       <div className="d-flex flex-row justify-content-center">
@@ -33,7 +33,7 @@ export default function Home() {
     </Card.Body>
   </Card>
   <Card>
-    <Card.Img variant="top" src={box01} className="box-img" />
+    <Card.Img variant="top" src={box02} className="box-img" />
     <Card.Body>
       <Card.Title>Card title</Card.Title>
       <Card.Text>

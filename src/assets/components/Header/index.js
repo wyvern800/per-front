@@ -8,7 +8,7 @@ import logo from '../../../assets/logo.png';
 function Header() {
   return (
     <Navbar bg="dark" variant="dark" sticky="top">
-        <Navbar.Brand><img src={logo} className="imgLogo"/></Navbar.Brand>
+        <Navbar.Brand><Link to ="/"><img src={logo} className="imgLogo"/></Link></Navbar.Brand>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav activeKey={window.location.pathname}>
             <Link to ="/">Home</Link>
