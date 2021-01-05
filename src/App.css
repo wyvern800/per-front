@@ -34,6 +34,7 @@ body, html {
 Nav a {
   text-decoration: none;
   color: white;
+  font-size: 30px;
   margin-left: 10px;
   margin-right: 10px;
 }
@@ -107,4 +108,8 @@ Nav a:hover{
   background-color: red;
   color: white;
   text-align: center;
+}
+
+.main-nav-active {
+  color: tomato !important;
 }

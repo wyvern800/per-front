@@ -1,9 +1,8 @@
 import React from "react";
-import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 
 const Footer = () => {
   return (
-<div class="footer">
+<div className="footer">
   <p>Footer</p>
 </div>
   );
