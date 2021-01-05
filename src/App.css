@@ -7,7 +7,7 @@ body, html {
   background-color: rgb(26,27,31);
   width: 100%;
   height: 100%;
-  margin: auto;
+  margin: 0;
 }
 
 .characterSearchBar {
@@ -76,6 +76,7 @@ Nav a:hover{
 
 .div-characters-list li img {
   background-color: rgba(128, 128, 128, 0.103);
+  cursor: pointer;
   border: 1px solid white;
   width: 170px;
   height: 231px;
@@ -83,6 +84,7 @@ Nav a:hover{
 
 
 .div-characters-list li img:hover {
+  cursor: pointer;
   box-shadow: inset 0 0 1em black, 0 0 1em yellow;
 }
 
@@ -94,4 +96,15 @@ Nav a:hover{
   position: relative;
   margin-top: -24px;
   color: white;
+}
+
+/* Rodapé */
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
 }
