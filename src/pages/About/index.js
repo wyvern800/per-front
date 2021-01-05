@@ -28,6 +28,8 @@ class About extends Component {
           <h1 className="infoCharName">{characters.name}</h1>
           </>}
         </div>
+        <div>
+        </div>
       </>
     );
   }
