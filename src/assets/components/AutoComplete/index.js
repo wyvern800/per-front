@@ -34,8 +34,8 @@ class AutoComplete extends Component {
 
     return (
       <div className="autocomplete">
-        <header className="autocomplete-header">
-          <div style={{ width: 700 }}>
+        <header>
+          <div className="search-bar">
             <ReactSearchAutocomplete
               items={items}
               onSelect={handleOnSelect}

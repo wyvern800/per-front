@@ -17,7 +17,7 @@ export default function Home() {
         descOne="Digite abaixo o nome do personagem que deseja obter informações de"
         descTwo="ouro!"
       />
-      <div className="d-flex flex-row justify-content-center">
+      <div className="d-flex justify-content-center">
         <AutoComplete />
       </div>
       <div className="d-flex justify-content-center">

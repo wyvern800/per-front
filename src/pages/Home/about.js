@@ -1,16 +1,29 @@
 import React from "react";
 
 export default function Home() {
-  return (
-    <>
-    <div>
-        <div className="character-about-img d flex float-left">
-        <div className="character-about-name d flex float-left">
-        <div className="character-about-skills d flex float-right">
-        </div>
-        </div>
-        </div>
-    </div>
-    </>
-  );
+    return (
+        <>
+<div className="grid">
+  <header>
+    Header
+  </header>
+
+  <aside className="sidebar-left">
+    Left Sidebar
+  </aside>
+
+  <article>
+    Article
+  </article>
+
+  <aside className="sidebar-right">
+    Right Sidebar
+  </aside>
+  
+  <footer>
+    Footer
+  </footer>
+</div>
+        </>
+    );
 }
