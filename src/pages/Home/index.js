@@ -21,7 +21,7 @@ export default function Home() {
         </Jumbotron>
       </div>
       <div className="d-flex flex-row justify-content-center">
-        <AutoComplete />
+        {/* AQUI ESTAVA A SEARCH BAR */}
       </div>
       <div  className="d-flex flex-row justify-content-center">
       <Card border="light" style={{ width: '18rem' }}>
@@ -54,6 +54,8 @@ export default function Home() {
       </Card.Text>
     </Card.Body>
   </Card>
+
+  <AutoComplete />
   </div>
     </>
   );

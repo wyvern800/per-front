@@ -1,14 +1,13 @@
-import React, { Component } from 'react'
-import {render} from 'react-dom'
-import Downshift from 'downshift'
+import React from "react";
+import Downshift from "downshift";
 
-const items = ['apple', 'pear', 'orange', 'grape', 'banana']
+const items = ["apple", "pear", "orange", "grape", "banana"];
 
-class AutoComplete extends Component {
-    render(
-      return (
+class AutoComplete extends React.Component {
+  render() {
+    return (
       <Downshift
-        onChange={selection => alert(`You selected ${selection}`)}
+        onChange={(selection) => alert(`You selected ${selection}`)}
         render={({
           getInputProps,
           getItemProps,
@@ -24,7 +23,7 @@ class AutoComplete extends Component {
             {isOpen ? (
               <div>
                 {items
-                  .filter(i => !inputValue || i.includes(inputValue))
+                  .filter((i) => !inputValue || i.includes(inputValue))
                   .map((item, index) => (
                     <div
                       {...getItemProps({
@@ -32,12 +31,9 @@ class AutoComplete extends Component {
                         index,
                         item,
                         style: {
-                          backgroundColor: highlightedIndex === index
-                            ? 'lightgray'
-                            : 'white',
-                          fontWeight: selectedItem === item
-                            ? 'bold'
-                            : 'normal',
+                          backgroundColor:
+                            highlightedIndex === index ? "lightgray" : "white",
+                          fontWeight: selectedItem === item ? "bold" : "normal",
                         },
                       })}
                     >
@@ -48,10 +44,9 @@ class AutoComplete extends Component {
             ) : null}
           </div>
         )}
-      />,
-      document.getElementById('root'),
-     )
-  );
+      />
+    );
+  }
 }
 
-export default AutoComplete
+export default AutoComplete;

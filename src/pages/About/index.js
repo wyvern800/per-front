@@ -5,7 +5,8 @@ import Loading from "../../assets/components/Loading";
 
 class About extends Component {
   state = {
-    character,
+    characters: [],
+    loading: true,
   };
 
   async componentDidMount() {
@@ -13,20 +14,19 @@ class About extends Component {
 
     const response = await api.get(`characters/i?charId=${id}`);
 
-    console.log(this.props.match.params.id);
-
-    this.setState({ character: response.data});
+    this.setState({ characters: response.data, loading: false });
   }
 
   render() {
-    const { character } = this.state.props;
+    const { characters, loading } = this.state;
 
     return (
       <>
         <div className="div-characters-list">
+          {loading ? <><Loading /></> : 
           <>
-            {character.name}
-          </>
+          <h1 className="infoCharName">{characters.name}</h1>
+          </>}
         </div>
       </>
     );

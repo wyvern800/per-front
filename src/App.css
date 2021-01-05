@@ -72,6 +72,9 @@ Nav a:hover{
   height: 231px;
 }
 
+h1.infoCharName{
+  color: white;
+}
 
 .div-characters-list li img:hover {
   cursor: pointer;
