@@ -1,61 +1,59 @@
 import React from "react";
 
 import AutoComplete from "../../assets/components/AutoComplete";
-import Jumbotron from "react-bootstrap/Jumbotron";
-import Container from "react-bootstrap/Container";
 import Card from 'react-bootstrap/Card'
+import CardDeck from 'react-bootstrap/CardDeck'
+import box01 from '../../assets/box-01.jpg';
+import box02 from '../../assets/box-02.jpg';
 
 // import { Container } from './styles';
 
 export default function Home() {
   return (
     <>
-      <div>
-        <Jumbotron fluid>
-          <Container>
-            <h1 className="text-center">Todos os personagens!</h1>
-            <p className="text-center">
-              Clique no seu preferido e venha se aprender mais sobre ele!
-              </p>
-          </Container>
-        </Jumbotron>
-      </div>
+<div className="box-home">
+    <div className="box-text">
+      <h1>Título</h1>
+      <p>Parágrafo</p>
+    </div>
+</div>
       <div className="d-flex flex-row justify-content-center">
-        {/* AQUI ESTAVA A SEARCH BAR */}
+        <AutoComplete />
       </div>
-      <div  className="d-flex flex-row justify-content-center">
-      <Card border="light" style={{ width: '18rem' }} className="card">
-    <Card.Header>Header</Card.Header>
+      <div  className="d-flex justify-content-center">
+      <CardDeck>
+  <Card>
+    <Card.Img variant="top" src={box01} className="box-img" />
     <Card.Body>
-      <Card.Title>Light Card Title</Card.Title>
+      <Card.Title>Card title</Card.Title>
       <Card.Text>
-        Some quick example text to build on the card title and make up the bulk
-        of the card's content.
+        This is a wider card with supporting text below as a natural lead-in to
+        additional content. This content is a little bit longer.
       </Card.Text>
     </Card.Body>
   </Card>
-  <Card border="light" style={{ width: '18rem' }}>
-    <Card.Header>Header</Card.Header>
+  <Card>
+    <Card.Img variant="top" src={box01} className="box-img" />
     <Card.Body>
-      <Card.Title>Light Card Title</Card.Title>
+      <Card.Title>Card title</Card.Title>
       <Card.Text>
-        Some quick example text to build on the card title and make up the bulk
-        of the card's content.
+        This card has supporting text below as a natural lead-in to additional
+        content.{' '}
       </Card.Text>
     </Card.Body>
   </Card>
-  <Card border="light" style={{ width: '18rem' }}>
-    <Card.Header>Header</Card.Header>
+  <Card>
+    <Card.Img variant="top" src={box01} className="box-img" />
     <Card.Body>
-      <Card.Title>Light Card Title</Card.Title>
+      <Card.Title>Card title</Card.Title>
       <Card.Text>
-        Some quick example text to build on the card title and make up the bulk
-        of the card's content.
+        This is a wider card with supporting text below as a natural lead-in to
+        additional content. This card has even longer content than the first to
+        show that equal height action.
       </Card.Text>
     </Card.Body>
   </Card>
-
-  <AutoComplete />
+</CardDeck>
   </div>
     </>
   );
