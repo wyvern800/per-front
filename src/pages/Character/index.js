@@ -5,6 +5,7 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 import Loading from "../../assets/components/Loading";
+import { Link } from 'react-router-dom';
 
 class Home extends Component {
   state = {
@@ -15,7 +16,7 @@ class Home extends Component {
   async componentDidMount() {
     const { id } = this.props.match.params;
 
-    const response = await api.get(`characters/?charId=${id}`);
+    const response = await api.get(`characters`);
 
     const data = response.data.map((character) => ({
       ...character,
@@ -45,7 +46,9 @@ class Home extends Component {
             <ul>
               {characters.map((character) => (
                 <li key={character.id}>
-                  <Image src={character.characterIcon} rounded />
+                  <Link to={`${this.props.match.url}=${character.id}`}>
+                    <Image src={character.characterIcon} rounded />
+                  </Link>
                   <p className="character-name">{character.name}</p>
                 </li>
               ))}

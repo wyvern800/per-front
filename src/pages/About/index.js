@@ -1,13 +1,36 @@
-import React from "react";
+import React, { Component } from "react";
 
-// import { Container } from './styles';
+import api from "../../services/api";
+import Loading from "../../assets/components/Loading";
 
-export default function About() {
-    return(
+class About extends Component {
+  state = {
+    character,
+  };
+
+  async componentDidMount() {
+    const { id } = this.props.match.params;
+
+    const response = await api.get(`characters/i?charId=${id}`);
+
+    console.log(this.props.match.params.id);
+
+    this.setState({ character: response.data});
+  }
+
+  render() {
+    const { character } = this.state.props;
+
+    return (
       <>
-    <div className="arroba">
-      <h2>About</h2>
-      </div>
-    </>
+        <div className="div-characters-list">
+          <>
+            {character.name}
+          </>
+        </div>
+      </>
     );
+  }
 }
+
+export default About;
