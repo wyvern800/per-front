@@ -14,8 +14,6 @@ class Home extends Component {
   };
 
   async componentDidMount() {
-    const { id } = this.props.match.params;
-
     const response = await api.get(`characters`);
 
     const data = response.data.map((character) => ({
@@ -46,7 +44,7 @@ class Home extends Component {
             <ul>
               {characters.map((character) => (
                 <li key={character.id}>
-                  <Link to={`${this.props.match.url}=${character.id}`}>
+                  <Link to={`/character/${character.id}`}>
                     <Image src={character.characterIcon} rounded />
                   </Link>
                   <p className="character-name">{character.name}</p>

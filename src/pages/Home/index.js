@@ -5,6 +5,7 @@ import Card from 'react-bootstrap/Card'
 import CardDeck from 'react-bootstrap/CardDeck'
 import box01 from '../../assets/box-01.jpg';
 import box02 from '../../assets/box-02.jpg';
+
 // import { Container } from './styles';
 
 export default function Home() {
@@ -20,6 +21,39 @@ export default function Home() {
         <AutoComplete />
       </div>
       <div  className="d-flex justify-content-center">
+      <CardDeck>
+  <Card>
+    <Card.Img variant="top" src={box01} className="box-img" />
+    <Card.Body>
+      <Card.Title>Card title</Card.Title>
+      <Card.Text>
+        This is a wider card with supporting text below as a natural lead-in to
+        additional content. This content is a little bit longer.
+      </Card.Text>
+    </Card.Body>
+  </Card>
+  <Card>
+    <Card.Img variant="top" src={box01} className="box-img" />
+    <Card.Body>
+      <Card.Title>Card title</Card.Title>
+      <Card.Text>
+        This card has supporting text below as a natural lead-in to additional
+        content.{' '}
+      </Card.Text>
+    </Card.Body>
+  </Card>
+  <Card>
+    <Card.Img variant="top" src={box01} className="box-img" />
+    <Card.Body>
+      <Card.Title>Card title</Card.Title>
+      <Card.Text>
+        This is a wider card with supporting text below as a natural lead-in to
+        additional content. This card has even longer content than the first to
+        show that equal height action.
+      </Card.Text>
+    </Card.Body>
+  </Card>
+</CardDeck>
   </div>
     </>
   );

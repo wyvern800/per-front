@@ -58,4 +58,4 @@ function AutoComplete() {
   )
 }
 
-export default AutoComplete
+export default AutoComplete;
