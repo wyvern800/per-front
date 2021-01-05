@@ -24,7 +24,7 @@ export default function Home() {
         <AutoComplete />
       </div>
       <div  className="d-flex flex-row justify-content-center">
-      <Card border="light" style={{ width: '18rem' }}>
+      <Card border="light" style={{ width: '18rem' }} className="card">
     <Card.Header>Header</Card.Header>
     <Card.Body>
       <Card.Title>Light Card Title</Card.Title>
