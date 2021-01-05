@@ -1,9 +1,5 @@
 import React, { Component } from "react";
-
 import api from "../../services/api";
-import Jumbotron from "react-bootstrap/Jumbotron";
-import Container from "react-bootstrap/Container";
-import { Spinner } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 import Loading from "../../assets/components/Loading";
 import { Link } from "react-router-dom";

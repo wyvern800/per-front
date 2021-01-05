@@ -1,28 +1,13 @@
 import React, { Component } from "react";
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
 import api from "../../../services/api";
-
-const handleOnSearch = (string, cached) => {
-  // onSearch returns the string searched and if
-  // the values are cached. If the values are cached
-  // "cached" contains the cached values, if not, returns false
-  console.log(string, cached);
-};
-
-const handleOnSelect = (item) => {
-  // the item selected
-  console.log(item);
-};
-
-const handleOnFocus = () => {
-  console.log("Focused");
-};
+import { withRouter } from "react-router-dom";
 
 class AutoComplete extends Component {
   state = {
     items: []
-  };
-  
+  }
+
   async componentDidMount() {
     const response = await api.get(`characters`);
 
@@ -34,24 +19,33 @@ class AutoComplete extends Component {
   }
 
   render() {
-    const { items, loading } = this.state;
+    const { items } = this.state;
+
+    const handleOnSelect = (item) => {
+      const { items } = this.state; 
+
+      // Finds the slug for the selected item
+      const found = items.find(element => element.id == item.id);
+      //console.log(`slug: ${found.slug}`);
+
+      // Change current page with the character page
+      this.props.history.push(`/characters/${found.slug}`);
+    };
 
     return (
       <div className="autocomplete">
-      <header className="autocomplete-header">
-        <div style={{ width: 700 }}>
-          <ReactSearchAutocomplete
-            items={items}
-            onSearch={handleOnSearch}
-            onSelect={handleOnSelect}
-            onFocus={handleOnFocus}
-            autoFocus
-          />
-        </div>
-      </header>
-    </div>
+        <header className="autocomplete-header">
+          <div style={{ width: 700 }}>
+            <ReactSearchAutocomplete
+              items={items}
+              onSelect={handleOnSelect}
+              autoFocus
+            />
+          </div>
+        </header>
+      </div>
     );
   }
 }
 
-export default AutoComplete;
+export default withRouter(AutoComplete);

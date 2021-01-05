@@ -11,11 +11,11 @@ class PageHeader extends Component {
         <div className="box-home">
           <div className="box-text">
             <span className="fadeIn-fast">
-            {titleOne} <span className="pink">{titleTwo}</span>
+              {titleOne} <span className="pink">{titleTwo}</span>
             </span>
             <p className="fadeIn-slow">
-            {descOne}
-              <span className="gold">{descTwo}</span>
+              {descOne}
+              <span className="gold"> {descTwo}</span>
             </p>
           </div>
         </div>
