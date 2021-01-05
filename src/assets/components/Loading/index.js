@@ -1,16 +1,13 @@
 import React from "react";
-import Loader from 'react-loader-spinner'
+import { Spinner } from "react-bootstrap";
 
 export default class Loading extends React.Component {
- //other logic
-   render() {
-    return(
-     <Loader
-        type="TailSpin"
-        color="#ffc300"
-        height={50}
-        width={50}
-     />
+  //other logic
+  render() {
+    return (
+      <Spinner animation="border" role="status">
+        <span className="sr-only">Loading...</span>
+      </Spinner>
     );
-   }
+  }
 }

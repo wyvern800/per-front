@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import api from "./services/api";
-
 import Header from "./assets/components/Header";
 import Footer from "./assets/components/Footer";
+import ScrollToTop from "./assets/components/ScrollToTop";
 
 import Routes from "./routes";
 
@@ -13,11 +12,13 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Header />
-        <div className="content">
-          <Routes />
-        </div>
-        <Footer />
+        <ScrollToTop>
+          <Header />
+          <div className="content">
+            <Routes />
+          </div>
+          <Footer />
+        </ScrollToTop>
       </BrowserRouter>
     </>
   );

@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import api from "../../services/api";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
+import {Spinner} from "react-bootstrap"
 import Image from "react-bootstrap/Image";
 import Loading from "../../assets/components/Loading";
 import { Link } from 'react-router-dom';
@@ -44,7 +45,7 @@ class Home extends Component {
             <ul>
               {characters.map((character) => (
                 <li key={character.id}>
-                  <Link to={`/character/${character.id}`}>
+                  <Link to={`/characters/${character.id}`}>
                     <Image src={character.characterIcon} rounded />
                   </Link>
                   <p className="character-name">{character.name}</p>

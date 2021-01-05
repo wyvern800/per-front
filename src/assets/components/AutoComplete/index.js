@@ -1,61 +1,57 @@
-import React from 'react'
-import { ReactSearchAutocomplete } from 'react-search-autocomplete'
+import React, { Component } from "react";
+import { ReactSearchAutocomplete } from "react-search-autocomplete";
+import api from "../../../services/api";
 
-function AutoComplete() {
-  const items = [
-    {
-      id: 0,
-      name: 'Cobol'
-    },
-    {
-      id: 1,
-      name: 'JavaScript'
-    },
-    {
-      id: 2,
-      name: 'Basic'
-    },
-    {
-      id: 3,
-      name: 'PHP'
-    },
-    {
-      id: 4,
-      name: 'Java'
-    }
-  ]
+const handleOnSearch = (string, cached) => {
+  // onSearch returns the string searched and if
+  // the values are cached. If the values are cached
+  // "cached" contains the cached values, if not, returns false
+  console.log(string, cached);
+};
 
-  const handleOnSearch = (string, cached) => {
-    // onSearch returns the string searched and if
-    // the values are cached. If the values are cached
-    // "cached" contains the cached values, if not, returns false
-    console.log(string, cached)
+const handleOnSelect = (item) => {
+  // the item selected
+  console.log(item);
+};
+
+const handleOnFocus = () => {
+  console.log("Focused");
+};
+
+class AutoComplete extends Component {
+  state = {
+    items: []
+  };
+  
+  async componentDidMount() {
+    const response = await api.get(`characters`);
+
+    const data = response.data.map((item) => ({
+      ...item,
+    }));
+
+    this.setState({ items: data });
   }
 
-  const handleOnSelect = (item) => {
-    // the item selected
-    console.log(item)
-  }
+  render() {
+    const { items, loading } = this.state;
 
-  const handleOnFocus = () => {
-    console.log('Focused')
+    return (
+      <div className="App">
+        <header className="App-header">
+          <div style={{ width: 400 }}>
+            <ReactSearchAutocomplete
+              items={items}
+              onSearch={handleOnSearch}
+              onSelect={handleOnSelect}
+              onFocus={handleOnFocus}
+              autoFocus
+            />
+          </div>
+        </header>
+      </div>
+    );
   }
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <div style={{ width: 400 }}>
-          <ReactSearchAutocomplete
-            items={items}
-            onSearch={handleOnSearch}
-            onSelect={handleOnSelect}
-            onFocus={handleOnFocus}
-            autoFocus
-          />
-        </div>
-      </header>
-    </div>
-  )
 }
 
 export default AutoComplete;
