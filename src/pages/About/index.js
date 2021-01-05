@@ -10,9 +10,9 @@ class About extends Component {
   };
 
   async componentDidMount() {
-    const { id } = this.props.match.params;
+    const { slug } = this.props.match.params;
 
-    const response = await api.get(`characters/i?charId=${id}`);
+    const response = await api.get(`characters/i?slug=${slug}`);
 
     this.setState({ characters: response.data, loading: false });
   }

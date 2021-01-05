@@ -45,7 +45,7 @@ class Home extends Component {
             <ul>
               {characters.map((character) => (
                 <li key={character.id}>
-                  <Link to={`/characters/${character.id}`}>
+                  <Link to={`/characters/${character.slug}`}>
                     <Image src={character.characterIcon} rounded />
                   </Link>
                   <p className="character-name">{character.name}</p>
