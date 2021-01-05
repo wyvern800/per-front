@@ -1,59 +1,25 @@
 import React from "react";
 
 import AutoComplete from "../../assets/components/AutoComplete";
-import Jumbotron from "react-bootstrap/Jumbotron";
-import Container from "react-bootstrap/Container";
 import Card from 'react-bootstrap/Card'
-
+import CardDeck from 'react-bootstrap/CardDeck'
+import box01 from '../../assets/box-01.jpg';
+import box02 from '../../assets/box-02.jpg';
 // import { Container } from './styles';
 
 export default function Home() {
   return (
     <>
-      <div>
-        <Jumbotron fluid>
-          <Container>
-            <h1 className="text-center">Todos os personagens!</h1>
-            <p className="text-center">
-              Clique no seu preferido e venha se aprender mais sobre ele!
-              </p>
-          </Container>
-        </Jumbotron>
-      </div>
+<div className="box-home">
+    <div className="box-text">
+      <h1>Título</h1>
+      <p>Parágrafo</p>
+    </div>
+</div>
       <div className="d-flex flex-row justify-content-center">
         <AutoComplete />
       </div>
-      <div  className="d-flex flex-row justify-content-center">
-      <Card border="light" style={{ width: '18rem' }} className="card">
-    <Card.Header>Header</Card.Header>
-    <Card.Body>
-      <Card.Title>Light Card Title</Card.Title>
-      <Card.Text>
-        Some quick example text to build on the card title and make up the bulk
-        of the card's content.
-      </Card.Text>
-    </Card.Body>
-  </Card>
-  <Card border="light" style={{ width: '18rem' }}>
-    <Card.Header>Header</Card.Header>
-    <Card.Body>
-      <Card.Title>Light Card Title</Card.Title>
-      <Card.Text>
-        Some quick example text to build on the card title and make up the bulk
-        of the card's content.
-      </Card.Text>
-    </Card.Body>
-  </Card>
-  <Card border="light" style={{ width: '18rem' }}>
-    <Card.Header>Header</Card.Header>
-    <Card.Body>
-      <Card.Title>Light Card Title</Card.Title>
-      <Card.Text>
-        Some quick example text to build on the card title and make up the bulk
-        of the card's content.
-      </Card.Text>
-    </Card.Body>
-  </Card>
+      <div  className="d-flex justify-content-center">
   </div>
     </>
   );
