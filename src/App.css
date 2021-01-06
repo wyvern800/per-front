@@ -8,10 +8,31 @@ body, html {
   background-size: cover;
   background-repeat: no-repeat;
   background-color: rgb(26,27,31);
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
+  
+  margin:0;
+  padding:0;
+  height:100%;
+  
+}
+
+#container {
+  min-height:100%;
+  position:relative;
+}
+#header {
+  background:#ff0;
+  padding:10px;
+}
+#body {
+  padding:10px;
+  padding-bottom:60px;   /* Height of the footer */
+}
+#footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:60px;   /* Height of the footer */
+  background:#6cf;
 }
 
 @-webkit-keyframes fadeIn {
@@ -188,15 +209,9 @@ article {
   grid-column: 3 / 4;
 }
 
-footer {
-  /* Start on Row 3, the last row */
-  grid-row: 3;
-  background-color: white;
-  /* Start on the first column line and extend all the to the last column line */
-  grid-column: 1 / 4;
-}
 /* Rodapé */
 .footer-clean {
+  margin-top: auto;
   position: absolute;
   width: 100%;
   bottom: 0;
@@ -216,7 +231,6 @@ footer {
   padding:0;
   list-style:none;
   line-height:1.6;
-  font-size:14px;
   margin-bottom:0;
 }
 
@@ -283,10 +297,6 @@ footer {
   margin-bottom:0;
   font-size:13px;
   opacity:0.6;
-}
-
-.content {
-  min-height: 86.3vh;
 }
 
 div.card-deck {
