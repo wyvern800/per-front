@@ -272,6 +272,88 @@ div.card-deck {
   z-index: 5;
 }
 
+/*# gl arenque*/
+div.characterPageWrapper {
+  justify-content: space-evenly;
+  flex-direction: row;
+  color: white;
+  border: 1px solid white;
+}
+
+div.characterName {
+  border: 1px solid cyan;
+}
+
+div.char_Stats {
+  border: 1px solid pink;
+}
+
+div.char_Lg {
+  border: 1px solid red; 
+}
+
+div.char_Builds {
+  border: 1px solid fuchsia; 
+}
+
+div.char_Lg img {
+  width: 100%;
+}
+
+div.leftContainer {
+  border: 1px solid khaki;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+div.middleContainer {
+  border: 1px solid lime;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+div.rightContainer {
+  border: 1px solid cyan;
+}
+
+div.rightContainer img {
+  width: 345px;
+}
+
+div.char_Skills {
+  border: 1px solid olive;
+}
+
+div.char_Skills img {
+  border: 2px solid white;
+  width: 50px;
+  height: 50px;
+}
+
+div.separator {
+  height: 10px;
+}
+
+div.map {
+  border: 1px solid purple;
+}
+
+div.charStats {
+  border: 1px solid white;
+}
+
+div.builds {
+  border: 1px solid blue;
+  color: white;
+}
+
+div.ads {
+  border: 1px solid yellow;
+  color: white;
+}
+
 /*@media (max-width: 900px) {
   Nav a {
     font-size: 20px;
