@@ -1559,6 +1559,11 @@ bootstrap-css-only@4.4.1:
   resolved "https://registry.yarnpkg.com/bootstrap-css-only/-/bootstrap-css-only-4.4.1.tgz#08012477b1baab52fa1ca304eaba2e40f6ef0d2e"
   integrity sha512-iBgNli7RnedBFwn6sMTQoAZ8WgIwmX4kF1rckfj+pgro5q/Q0DbLtcpfH60XoFnCXzbEJU/khC/B2EQap89mCg==
 
+bootstrap-icons@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/bootstrap-icons/-/bootstrap-icons-1.2.2.tgz#af9f3ce76298cfd3ac0a3d23a68c7b7fe7f41db4"
+  integrity sha512-7rFICA7E/CgYLvu8zYtd2wMZYhYPQ0GtogZtQyJz/3melCGeQ76qas5wItIEwiUNmtZWg2SP2p8Ekxy3Nk7vvg==
+
 bootstrap@^4.5.3:
   version "4.5.3"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.5.3.tgz#c6a72b355aaf323920be800246a6e4ef30997fe6"
