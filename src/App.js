@@ -14,7 +14,7 @@ function App() {
       <BrowserRouter>
         <ScrollToTop>
           <Header />
-          <Container>
+          <Container className="min-height">
             <Routes />
           </Container>
           <Rodape />

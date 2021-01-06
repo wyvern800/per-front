@@ -187,17 +187,9 @@ article {
   /* Start on the third column line and stop at the last column line */
   grid-column: 3 / 4;
 }
-
-footer {
-  /* Start on Row 3, the last row */
-  grid-row: 3;
-  background-color: white;
-  /* Start on the first column line and extend all the to the last column line */
-  grid-column: 1 / 4;
-}
 /* Rodapé */
 .footer-clean {
-  position: absolute;
+  position: relative;
   width: 100%;
   bottom: 0;
   padding:50px 0;
@@ -285,8 +277,8 @@ footer {
   opacity:0.6;
 }
 
-.content {
-  min-height: 86.3vh;
+.min-height {
+  min-height: 67vh;
 }
 
 div.card-deck {
@@ -311,7 +303,7 @@ div.card-deck {
 }
 
 .autocomplete {
-  top:30%;
+  position: relative;
   z-index: 5;
 }
 

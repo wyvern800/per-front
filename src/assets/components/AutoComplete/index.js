@@ -34,11 +34,14 @@ class AutoComplete extends Component {
 
     return (
       <>
-        <ReactSearchAutocomplete
-          items={items}
-          onSelect={handleOnSelect}
-          autoFocus
-        />
+      <div className="autocomplete">
+          <ReactSearchAutocomplete
+          className="autocomplete"
+            items={items}
+            onSelect={handleOnSelect}
+            autoFocus
+          />
+      </div>
       </>
     );
   }

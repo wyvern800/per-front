@@ -28,6 +28,9 @@ export default function Home() {
       <Row>
         <Col>
           <Noticias />
+          <Noticias />
+          <Noticias />
+          <Noticias />
         </Col>
       </Row>
 
