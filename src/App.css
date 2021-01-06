@@ -196,11 +196,37 @@ footer {
   grid-column: 1 / 4;
 }
 /* Rodapé */
-.footer {
-  position: sticky;
+
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+
   background-color: rgba(0, 0, 0, 0.178);
   color: white;
   text-align: center;
+  padding: 10px 10px 0px 10px; 
+}
+
+.poro-footer {
+  margin-top: 42px;
+  padding: 24px;
+  color: grey;
+  background-color: #f0f0f0;
+  font-size: 12px;
+}
+
+.poro-footer_content {
+  position: relative;
+  display: flex;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .footer p {
@@ -212,8 +238,7 @@ footer {
 }
 
 div.card-deck {
-  width: 100%;
-  height: 100%;
+  margin: 10px;
 }
 
 .box-text{
@@ -240,11 +265,11 @@ div.card-deck {
 }
 
 .search-bar {
-  float: right;
-  width: 820px;
+  margin: 30px;
+  width: 100%;
 }
 
-@media (max-width: 900px) {
+/*@media (max-width: 900px) {
   Nav a {
     font-size: 20px;
     margin-left: 5px;
@@ -360,4 +385,4 @@ div.card-deck {
     color: white;
     text-align: center;
   }
-}
+}*/

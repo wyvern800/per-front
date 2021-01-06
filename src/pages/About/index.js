@@ -23,12 +23,13 @@ class About extends Component {
     return (
       <>
         <div className="div-characters-list">
-          {loading ? <Loading /> : 
-          <>
-          <h1 className="infoCharName">{characters.name}</h1>
-          </>}
-        </div>
-        <div>
+          {loading ? (
+            <Loading />
+          ) : (
+            <>
+              <h1 className="infoCharName">{characters.name}</h1>
+            </>
+          )}
         </div>
       </>
     );

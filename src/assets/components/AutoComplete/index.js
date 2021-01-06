@@ -5,8 +5,8 @@ import { withRouter } from "react-router-dom";
 
 class AutoComplete extends Component {
   state = {
-    items: []
-  }
+    items: [],
+  };
 
   async componentDidMount() {
     const response = await api.get(`characters`);
@@ -22,10 +22,10 @@ class AutoComplete extends Component {
     const { items } = this.state;
 
     const handleOnSelect = (item) => {
-      const { items } = this.state; 
+      const { items } = this.state;
 
       // Finds the slug for the selected item
-      const found = items.find(element => element.id == item.id);
+      const found = items.find((element) => element.id == item.id);
       //console.log(`slug: ${found.slug}`);
 
       // Change current page with the character page
@@ -33,17 +33,13 @@ class AutoComplete extends Component {
     };
 
     return (
-      <div className="autocomplete">
-        <header>
-          <div className="search-bar">
-            <ReactSearchAutocomplete
-              items={items}
-              onSelect={handleOnSelect}
-              autoFocus
-            />
-          </div>
-        </header>
-      </div>
+      <>
+        <ReactSearchAutocomplete
+          items={items}
+          onSelect={handleOnSelect}
+          autoFocus
+        />
+      </>
     );
   }
 }

@@ -1,9 +1,10 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import Header from "./assets/components/Header";
-import Footer from "./assets/components/Footer";
+import Rodape from "./assets/components/Rodape";
 import ScrollToTop from "./assets/components/ScrollToTop";
 import Routes from "./routes";
+import { Container } from "react-bootstrap";
 
 import "./App.css";
 
@@ -13,10 +14,10 @@ function App() {
       <BrowserRouter>
         <ScrollToTop>
           <Header />
-          <div className="content">
+          <Container>
             <Routes />
-          </div>
-          <Footer />
+          </Container>
+          <Rodape />
         </ScrollToTop>
       </BrowserRouter>
     </>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class PageHeader extends Component {
+export default class PageHeader extends Component {
   async componentDidMount() {}
 
   render() {
@@ -23,5 +23,3 @@ class PageHeader extends Component {
     );
   }
 }
-
-export default PageHeader;
