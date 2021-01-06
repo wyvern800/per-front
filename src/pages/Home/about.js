@@ -1,22 +1,41 @@
 import React from "react";
-import { Container } from 'react-bootstrap'
+import PageHeader from "../../assets/components/PageHeader";
+import { Container, Row, Col } from "react-bootstrap";
+import full from "../../assets/jackie-full.png";
 
 export default function Home() {
   return (
     <>
-      <Container>
-        <div className="grid">
-          <header>Header</header>
-
-          <aside className="sidebar-left">Left Sidebar</aside>
-
-          <article>Article</article>
-
-          <aside className="sidebar-right">Right Sidebar</aside>
-
-          <footer>Footer</footer>
-        </div>
-      </Container>
+        <Row>
+          <Col>
+            <PageHeader
+              titleOne="Personagem: "
+              titleTwo="#character.name"
+            />
+          </Col>
+        </Row>
+        <Row>
+          <Row>
+            <Col>
+              <img src={full} />
+              <Row>
+                <Col>
+                <button>Character Name</button></Col>
+              </Row>
+            </Col>
+            <Row>
+              <Col>
+                GeeksforGeeks 5
+                </Col>
+              <Col>
+                GeeksforGeeks 6
+                </Col>
+              <Col>
+                GeeksforGeeks 7
+                </Col>
+            </Row>
+          </Row>
+        </Row>
     </>
   );
 }
