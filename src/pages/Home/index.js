@@ -27,28 +27,7 @@ export default function Home() {
 
       <Row>
         <Col>
-          <Noticias />
-          <Noticias />
-          <Noticias />
-          <Noticias />
-        </Col>
-      </Row>
-
-      <Row>
-        <Col>
-          {/* <div className="d-flex justify-content-center">*/}
-
-          {/* </div> */}
-
-          {/*<div className="d-flex justify-content-center">*/}
-
-          {/*cardview aq*/}
-
-          <Row>
-            <Col>choppa</Col>
-          </Row>
-
-          {/*</div>*/}
+          <Noticias className="div-cards" />
         </Col>
       </Row>
     </>

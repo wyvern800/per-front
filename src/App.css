@@ -1,5 +1,6 @@
 * {
   font-family: 'Viga', sans-serif;
+  font-size: 14px;
 }
 
 body, html {
@@ -278,11 +279,12 @@ article {
 }
 
 .min-height {
-  min-height: 67vh;
+  min-height: 65.70vh;
+  margin-bottom: 20px;
 }
 
 div.card-deck {
-  margin: 10px;
+  margin-top: 70px;
 }
 
 .box-text{

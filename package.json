@@ -10,7 +10,6 @@
     "bootstrap": "^4.5.3",
     "bootstrap-icons": "^1.2.2",
     "downshift": "^6.0.10",
-    "faker": "^5.1.0",
     "mdbreact": "^5.0.1",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",

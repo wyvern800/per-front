@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import { FaGithubAlt, FaFacebookF, FaPatreon } from "react-icons/fa";
+
 export default class Rodape extends Component {
   render() {
     return (
@@ -52,13 +54,13 @@ export default class Rodape extends Component {
                 </div>
                 <div className="col-lg-3 item social">
                   <a href="#">
-                    <i className="bi bi-facebook"></i>
+                  <FaGithubAlt/>
                   </a>
                   <a href="#">
-                    <i className="bi bi-twitter"></i>
+                    <FaFacebookF />
                   </a>
                   <a href="#">
-                    <i className="bi bi-instagram"></i>
+                    <FaPatreon />
                   </a>
                   <p className="copyright">Company Name © 2018</p>
                 </div>
