@@ -87,7 +87,7 @@ class About extends Component {
                     {/* container no meio, só ir socando div e os componente dentro das div | tava sm={5}*/}
                     <div className="middleContainer">
                       <div className="char_Skills">
-                      <Separator height={10} />
+                        <Separator height={10} />
                         {skills.map((skill) => (
                           <ul>
                             <li key={skill.id}>
@@ -100,6 +100,14 @@ class About extends Component {
                       {/**aqui vão ficar as builds bonitíneas (table e etc)*/}
                       <div className="char_Builds">
                         <Table striped bordered hover variant="dark" responsive>
+                          <thead>
+                            <tr>
+                              <th>Icone</th>
+                              <th>Nome</th>
+                              <th>Custo</th>
+                              <th>Cooldown</th>
+                            </tr>
+                          </thead>
                           <tbody>
                             {skills.map((skill) => (
                               <tr key={skill.id}>
