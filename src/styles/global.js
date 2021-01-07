@@ -1,10 +1,15 @@
+import { createGlobalStyle } from 'styled-components';
+import background from '../assets/background.jpg';
+
+
+export default createGlobalStyle`
 * {
   font-family: 'Viga', sans-serif;
   font-size: 14px;
 }
 
 body, html {
-  background-image: url("./assets/background.jpg");
+  background-image: url(${background});
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
@@ -17,7 +22,7 @@ body, html {
 
 @-webkit-keyframes fadeIn {
   0% { opacity: 0; }
-  100% { opacity: 1; } 
+  100% { opacity: 1; }
   }
   @-moz-keyframes fadeIn {
   0% { opacity: 0;}
@@ -267,77 +272,8 @@ div.card-deck {
   height: 150px;
 }
 
-.autocomplete {
-  position: relative;
-  z-index: 5;
-}
-
-/*# gl arenque*/
-div.characterPageWrapper {
-  justify-content: space-evenly;
-  flex-direction: row;
-  color: white;
-  border: 1px solid white;
-}
-
 div.characterName {
   border: 1px solid cyan;
-}
-
-div.char_Stats {
-  border: 1px solid pink;
-}
-
-div.char_Lg {
-  border: 1px solid red; 
-}
-
-div.char_Builds {
-  border: 1px solid fuchsia; 
-}
-
-div.char_Lg img {
-  width: 100%;
-}
-
-div.leftContainer {
-  border: 1px solid khaki;
-  color: white;
-  display: flex;
-  flex-direction: column;
-}
-
-div.middleContainer {
-  border: 1px solid lime;
-  color: white;
-  display: flex;
-  flex-direction: column;
-}
-
-div.rightContainer {
-  border: 1px solid cyan;
-}
-
-div.rightContainer img {
-  width: 345px;
-}
-
-div.char_Skills {
-  border: 1px solid olive;
-}
-
-div.char_Skills img {
-  border: 2px solid white;
-  width: 50px;
-  height: 50px;
-}
-
-div.separator {
-  height: 10px;
-}
-
-div.map {
-  border: 1px solid purple;
 }
 
 div.charStats {
@@ -353,121 +289,4 @@ div.ads {
   border: 1px solid yellow;
   color: white;
 }
-
-/*@media (max-width: 900px) {
-  Nav a {
-    font-size: 20px;
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-  .div-characters-list {
-    margin-left: -35px;
-  }
-  .imgLogo {
-    width: 100px;
-    height: 50px;
-  }
-
-  div#app {
-    width: 100%;
-    height: 100%;
-  }
-  div.card-deck {
-    display: flex;
-    justify-content: center;
-  }
-  .box-img {
-    width: 100%;
-    height: 100px;
-  }
-  .search-bar {
-    float: right;
-    width: 200px;
-  }
-  .autocomplete {
-    position: relative;
-    width: 28%;
-    z-index: 5;
-  }
-  .footer {
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.178);
-    color: white;
-    text-align: center;
-  }
-}
-
-@media (max-width: 700px) {
-  Nav a {
-    font-size: 20px;
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-  .div-characters-list {
-    margin-left: -35px;
-  }
-  .imgLogo {
-    width: 100px;
-    height: 50px;
-  }
-
-  div#app {
-    width: 100%;
-    height: 100%;
-  }
-  .card {
-    position: relative;
-    top: 1%;
-    width: 100%;
-    height: 130px;
-  }
-  .box-img {
-    display: none;
-  }
-  .search-bar {
-    float: right;
-    width: 200px;
-  }
-  .autocomplete {
-    position: relative;
-    width: 48%;
-    z-index: 5;
-  }
-  .footer {
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.178);
-    color: white;
-    text-align: center;
-  }
-}
-
-@media (max-width: 400px) {
-  Nav a {
-    font-size: 15px;
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-  .box-img {
-    display: none;
-  }
-  .card {
-    position: relative;
-    width: 100%;
-    height: 150px;
-  }
-  .search-bar {
-    float: right;
-    width: 200px;
-  }
-  .autocomplete {
-    position: relative;
-    width: 55%;
-    z-index: 5;
-  }
-  .footer {
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.178);
-    color: white;
-    text-align: center;
-  }
-}*/
+`;

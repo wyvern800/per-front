@@ -1,12 +1,12 @@
-import React from "react";
-import { BrowserRouter } from "react-router-dom";
-import Header from "./assets/components/Header";
-import Rodape from "./assets/components/Rodape";
-import ScrollToTop from "./assets/components/ScrollToTop";
-import Routes from "./routes";
-import { Container } from "react-bootstrap";
+import React from 'react';
 
-import "./App.css";
+import { BrowserRouter } from 'react-router-dom';
+import Header from './assets/components/Header';
+import Rodape from './assets/components/Rodape';
+import ScrollToTop from './assets/components/ScrollToTop';
+import Routes from './routes';
+import { Container } from 'react-bootstrap';
+import GlobalStyle from './styles/global';
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
           <Header />
           <Container fluid="xl" className="min-height">
             <Routes />
+            <GlobalStyle />
           </Container>
           <Rodape />
         </ScrollToTop>

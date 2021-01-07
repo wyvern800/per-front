@@ -1,16 +1,16 @@
-import React from "react";
-import { Spinner } from "react-bootstrap";
+import React, { Component } from 'react';
+import { Spinner } from 'react-bootstrap';
 
-export default class Loading extends React.Component {
-
-
-  
-  //other logic
+export default class Loading extends Component {
   render() {
     return (
-      <Spinner animation="border" role="status">
-        <span className="sr-only">Loading...</span>
-      </Spinner>
+      <>
+        <div>
+          <Spinner animation="border" role="status">
+            <span className="sr-only">Loading...</span>
+          </Spinner>
+        </div>
+      </>
     );
   }
 }

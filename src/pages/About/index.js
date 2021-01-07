@@ -1,11 +1,26 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import api from '../../services/api';
+import Loading from '../../assets/components/Loading';
+import PageHeader from '../../assets/components/PageHeader';
+import { Row, Col, Badge, Table } from 'react-bootstrap';
+import map from '../../assets/map.png';
+import Separator from '../../assets/components/Separator';
+import Chart from '../../assets/components/Chart';
+import DivTitle from '../../assets/components/DivTitle';
 
-import api from "../../services/api";
-import Loading from "../../assets/components/Loading";
-import PageHeader from "../../assets/components/PageHeader";
-import { Row, Col, Badge, Table } from "react-bootstrap";
-import map from "../../assets/map.png";
-import Separator from "../../assets/components/Separator";
+import {
+  CharacterPageWrapper,
+  CharactersList,
+  LeftContainer,
+  CharacterLargePortrait,
+  CharacterStats,
+  CharacterChart,
+  MiddleContainer,
+  CharacterSkills,
+  CharacterBuilds,
+  RightContainer,
+  CharacterMap,
+} from './styles';
 
 class About extends Component {
   state = {
@@ -38,21 +53,26 @@ class About extends Component {
           </Col>
         </Row>
 
-        <div className="div-characters-list">
+        <CharactersList>
           {loading ? (
             <Loading />
           ) : (
             <>
-              <div className="characterPageWrapper">
+              <CharacterPageWrapper>
                 <Row>
                   <Col sm={3}>
-                    {/* container da esquerda, só ir socando div e os componente dentro delas */}
-                    <div className="leftContainer">
-                      <div className="char_Lg">
+                    <LeftContainer>
+                      <DivTitle text="Foto" />
+                      <CharacterLargePortrait>
                         <img src={character.characterLargeIcon} />
-                      </div>
+                      </CharacterLargePortrait>
                       <Separator height={10} />
-                      <div className="char_Stats">
+                      <CharacterChart>
+                        <Chart weaponsData={character.weapons} />
+                      </CharacterChart>
+                      <Separator height={10} />
+                      <CharacterStats>
+                        <DivTitle text="Infos" />
                         <p>
                           LP Base:
                           <Badge variant="success">
@@ -77,29 +97,28 @@ class About extends Component {
                             {character.characterTier}
                           </Badge>
                         </p>
-                      </div>
+                      </CharacterStats>
                       <Separator height={10} />
-                    </div>
-                    {/** End container esquerda */}
+                    </LeftContainer>
                   </Col>
 
                   <Col>
-                    {/* container no meio, só ir socando div e os componente dentro das div | tava sm={5}*/}
-                    <div className="middleContainer">
-                      <div className="char_Skills">
-                        <Separator height={10} />
-                        {skills.map((skill) => (
-                          <ul>
+                    <MiddleContainer>
+                      <CharacterSkills>
+                        <DivTitle text="Habilidades" />
+                        <div>
+                          {skills.map((skill) => (
                             <li key={skill.id}>
                               <img src={skill.skillIcon} />
                             </li>
-                          </ul>
-                        ))}
-                      </div>
+                          ))}
+                        </div>
+                      </CharacterSkills>
                       <Separator height={10} />
-                      {/**aqui vão ficar as builds bonitíneas (table e etc)*/}
-                      <div className="char_Builds">
-                        <Table striped bordered hover variant="dark" responsive>
+                      <CharacterBuilds>
+                        <DivTitle text="Builds" />
+                        Builds will be here
+                        {/**<Table striped bordered hover variant="dark" responsive>
                           <thead>
                             <tr>
                               <th>Icone</th>
@@ -121,28 +140,26 @@ class About extends Component {
                               </tr>
                             ))}
                           </tbody>
-                        </Table>
-                      </div>
+                        </Table> */}
+                      </CharacterBuilds>
                       <Separator height={10} />
-                    </div>
-                    {/** end container meio */}
+                    </MiddleContainer>
                   </Col>
 
                   <Col sm={4}>
-                    {/* container da direita, só ir socando div e os componente dentro q ele estica pra baixo*/}
-                    <div className="rightContainer">
-                      <div className="map">
+                    <RightContainer>
+                      <CharacterMap>
+                        <DivTitle text="Mapa" />
                         <img src={map} />
-                      </div>
+                      </CharacterMap>
                       <Separator height={10} />
-                    </div>
-                    {/** end conntainer direita */}
+                    </RightContainer>
                   </Col>
                 </Row>
-              </div>
+              </CharacterPageWrapper>
             </>
           )}
-        </div>
+        </CharactersList>
       </>
     );
   }

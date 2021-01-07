@@ -20,6 +20,11 @@ module.exports = {
          }
       },
       {
+        test: /\.(sass|less|css)$/,
+        exclude: /node_modules/, // excluir os arquivos do node da transpilação
+        use: [{ loader: "style-loader" }, { loader: "css-loader" },{ loader: "less-loader" }],
+      },
+      {
         test: /\.css$/, // para arquivos que terminam em css
             exclude: /node_modules/,
             use: [{ loader: "style-loader" }, { loader: "css-loader" }],
@@ -30,7 +35,7 @@ module.exports = {
   use: {
     loader: 'file-loader',
   }
-},      
+},
     ]
   },
 };

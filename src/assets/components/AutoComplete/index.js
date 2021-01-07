@@ -1,7 +1,9 @@
-import React, { Component } from "react";
-import { ReactSearchAutocomplete } from "react-search-autocomplete";
-import api from "../../../services/api";
-import { withRouter } from "react-router-dom";
+import React, { Component } from 'react';
+import { ReactSearchAutocomplete } from 'react-search-autocomplete';
+import api from '../../../services/api';
+import { withRouter } from 'react-router-dom';
+
+import { DivSearchBar } from './styles';
 
 class AutoComplete extends Component {
   state = {
@@ -34,14 +36,13 @@ class AutoComplete extends Component {
 
     return (
       <>
-      <div className="autocomplete">
+        <DivSearchBar>
           <ReactSearchAutocomplete
-          className="autocomplete"
             items={items}
             onSelect={handleOnSelect}
             autoFocus
           />
-      </div>
+        </DivSearchBar>
       </>
     );
   }
