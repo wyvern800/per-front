@@ -3,7 +3,7 @@ import styled, { keyframes, css } from 'styled-components';
 export const TitleWrapper = styled.div`
   display: flex;
   justify-content: center;
-  border: 1px solid red;
+  border-bottom: 1px solid gold;
   background-color: rgba(25, 26, 26, 1);
 
   h3 {

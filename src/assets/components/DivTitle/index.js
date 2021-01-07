@@ -1,17 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-import {
-  TitleWrapper,
-} from './styles';
+import { TitleWrapper } from './styles';
 
 export default class DivTitle extends Component {
   render() {
     const { text } = this.props;
 
-    return(
+    return (
       <>
         <TitleWrapper>
-          <h3>{ text }</h3>
+          <h3>{text}</h3>
         </TitleWrapper>
       </>
     );
