@@ -6,7 +6,7 @@ import { Row, Col, Badge, Table } from 'react-bootstrap';
 import Separator from '../../assets/components/Separator';
 import Chart from '../../assets/components/Chart';
 import DivTitle from '../../assets/components/DivTitle';
-import Map from '../../assets/components/Map'
+import Map from '../../assets/components/Map';
 
 import {
   CharacterPageWrapper,
@@ -62,7 +62,7 @@ class About extends Component {
                 <Row>
                   <Col sm={3}>
                     <LeftContainer>
-                      <DivTitle text="Foto" />
+                      <DivTitle text={character.name} />
                       <CharacterLargePortrait>
                         <img src={character.characterLargeIcon} />
                       </CharacterLargePortrait>
@@ -149,8 +149,10 @@ class About extends Component {
                   <Col sm={4}>
                     <RightContainer>
                       <CharacterMap>
-                        <DivTitle text="Mapa" />
-                        <Map />
+                        <DivTitle text="Rotas" />
+                        <div>
+                          <Map />
+                        </div>
                       </CharacterMap>
                       <Separator height={10} />
                     </RightContainer>

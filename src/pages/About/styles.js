@@ -105,4 +105,10 @@ export const CharacterBuilds = styled.div`
 
 export const CharacterMap = styled.div`
   background-color: rgba(218, 219, 221, 0.1);
+  min-height: 480px;
+
+  div {
+    display: flex;
+    justify-content: center;
+  }
 `;

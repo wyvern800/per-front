@@ -146,12 +146,12 @@ h1.infoCharName{
 }
 
 .character-name{
-  border-radius: 7px;
-  border: 1px solid white;
   text-align: center;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.6);
   position: relative;
-  margin-top: -24px;
+  margin-top: -35px;
+  padding-left: 10px;
+  padding-right: 10px;
   color: white;
 }
 

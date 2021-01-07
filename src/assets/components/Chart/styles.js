@@ -12,7 +12,7 @@ export const WeaponsContainer = styled.div`
   justify-content: center;
 
   div {
-    border: 1px solid lawngreen;
+    border: 1px solid gray;
   }
 `;
 
