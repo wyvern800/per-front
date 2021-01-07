@@ -3,10 +3,10 @@ import api from '../../services/api';
 import Loading from '../../assets/components/Loading';
 import PageHeader from '../../assets/components/PageHeader';
 import { Row, Col, Badge, Table } from 'react-bootstrap';
-import map from '../../assets/map.png';
 import Separator from '../../assets/components/Separator';
 import Chart from '../../assets/components/Chart';
 import DivTitle from '../../assets/components/DivTitle';
+import Map from '../../assets/components/Map'
 
 import {
   CharacterPageWrapper,
@@ -150,7 +150,7 @@ class About extends Component {
                     <RightContainer>
                       <CharacterMap>
                         <DivTitle text="Mapa" />
-                        <img src={map} />
+                        <Map />
                       </CharacterMap>
                       <Separator height={10} />
                     </RightContainer>
