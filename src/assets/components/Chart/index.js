@@ -4,11 +4,7 @@ import Separator from '../Separator';
 import DivTitle from '../DivTitle';
 
 import RadarChart from 'react-svg-radar-chart';
-import {
-  WeaponsList,
-  WeaponsContainer,
-  WeaponInfo,
-} from './styles';
+import { WeaponsList, WeaponsContainer, WeaponInfo } from './styles';
 
 //import 'react-svg-radar-chart/build/css/index.css'
 
@@ -37,7 +33,7 @@ export default class Chart extends Component {
 
     this.setState({ weapons: weaponsData });
 
-    const theWeapon = weaponsData[0];
+    const theWeapon = weaponsData[1];
 
     this.setState({ selectedWeapon: theWeapon, loading: false });
   }
@@ -62,27 +58,6 @@ export default class Chart extends Component {
       selectedWeapon.defense
     );*/
 
-    return (
-      <>
-        <WeaponsList>
-          <DivTitle text="Armas" />
-          <WeaponsContainer>
-            {weapons.map((weapon) => (
-              <div
-                key={weapon.id}
-                onClick={() => this.changeWeapon(weapon.id)}
-              >
-                <img src={weapon.icon} />
-              </div>
-            ))}
-          </WeaponsContainer>
-        </WeaponsList>
-        <Separator height={10} />
-        <WeaponInfo>
-          Selected Weapon: {selectedWeapon.name}
-          {/**<RadarChart captions={captions} data={data} size={450} />**/}
-        </WeaponInfo>
-      </>
-    );
+    return <></>;
   }
 }

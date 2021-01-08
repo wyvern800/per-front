@@ -1,23 +1,6 @@
 import styled, { keyframes, css } from 'styled-components';
 
-export const WeaponsList = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`;
 
-export const WeaponsContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-
-  div {
-    border: 1px solid gray;
-  }
-`;
-
-export const WeaponInfo = styled.div`
-`;
 
 /*export const SubmitButton = styled.button.attrs(props => ({
   type: 'submit',

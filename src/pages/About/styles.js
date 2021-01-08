@@ -101,6 +101,12 @@ export const CharacterSkills = styled.div`
 
 export const CharacterBuilds = styled.div`
   background-color: rgba(218, 219, 221, 0.1);
+
+  div.buildsDiv {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 export const CharacterMap = styled.div`
@@ -112,3 +118,28 @@ export const CharacterMap = styled.div`
     justify-content: center;
   }
 `;
+
+export const WeaponsList = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+export const WeaponsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  div {
+    border: 1px solid gray;
+    width: 45px;
+    height: 45px;
+
+    img {
+      max-width: 43px;
+      max-height: 43px;
+    }
+  }
+`;
+
+export const WeaponInfo = styled.div``;

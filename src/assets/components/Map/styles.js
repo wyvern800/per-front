@@ -27,7 +27,7 @@ export const DivMap = styled.div`
     }
 
     span.routeNumber {
-      color: #1cbd00;
+      color: gold;
       padding-right: 4px;
     }
 

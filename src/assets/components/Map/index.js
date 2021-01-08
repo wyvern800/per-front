@@ -6,11 +6,9 @@ import api from '../../../services/api';
 export default class Map extends Component {
   state = {
     citiesData: [],
-    weapons: [],
   };
 
   async componentDidMount() {
-    const { weaponsData } = this.props;
 
     let citie = [
       { id: 1, pos: 'map01', name: 'Beco', top: 13, left: 42 },
@@ -31,11 +29,12 @@ export default class Map extends Component {
       { id: 16, pos: 'map16', name: 'Docas', top: 86, left: 47 },
     ];
 
-    this.setState({ citiesData: citie, weapons: weaponsData });
+    this.setState({ citiesData: citie });
   }
 
   render() {
-    const { citiesData, weapons } = this.state;
+    const { citiesData } = this.state;
+
 
     return (
       <>
@@ -43,7 +42,8 @@ export default class Map extends Component {
           <img src={imgmap} alt={imgmap} />
           {citiesData.map((city, index) => (
             <div key={index} id={city.pos} className={'box'}>
-              <span className="routeNumber">{city.id}</span><span className="locationName">{city.name}</span>
+              <span className="routeNumber">{city.id}</span>
+              <span className="locationName">{city.name}</span>
             </div>
           ))}
         </DivMap>
