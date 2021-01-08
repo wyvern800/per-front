@@ -151,7 +151,7 @@ class About extends Component {
                       <CharacterMap>
                         <DivTitle text="Rotas" />
                         <div>
-                          <Map />
+                          <Map weaponsData={character.weapons}/>
                         </div>
                       </CharacterMap>
                       <Separator height={10} />

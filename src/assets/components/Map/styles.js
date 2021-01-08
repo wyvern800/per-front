@@ -19,14 +19,19 @@ export const DivMap = styled.div`
     position: absolute;
     border-radius: 3px;
     background-color: rgba(0, 0, 0, 0.6);
+    padding-right: 5px;
+    padding-left: 4px;
 
     span {
-      font-size: 12px;
-      padding-left: 5px;
-      padding-right: 5px;
+      font-size: 13px;
     }
 
-    span:hover {
+    span.routeNumber {
+      color: #1cbd00;
+      padding-right: 4px;
+    }
+
+    span.locationName:hover {
       color: gold;
       opacity: 1;
     }
@@ -68,13 +73,13 @@ export const DivMap = styled.div`
   }
 
   #map08 {
-    top: 46%;
-    left: 64%;
+    top: 40%;
+    left: 6%;
   }
 
   #map9 {
     top: 55%;
-    left: 84%;
+    left: 74%;
   }
 
   #map10 {
