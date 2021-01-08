@@ -25,17 +25,8 @@ export const CharactersList = styled.div`
 
     img {
       background-color: rgba(128, 128, 128, 0.103);
-      cursor: pointer;
-      //border: 1px solid white;
       width: 170px;
       height: 231px;
-      opacity: 0.6;
-      transition: 0.3s;
-    }
-
-    img:hover {
-      cursor: pointer;
-      opacity: 1;
     }
   }
 `;
@@ -80,10 +71,6 @@ export const CharacterChart = styled.div`
 
 export const CharacterSkills = styled.div`
   background-color: rgba(218, 219, 221, 0.1);
-
-  p {
-    color: yellow;
-  }
 
   div {
     display: flex;

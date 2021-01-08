@@ -40,7 +40,7 @@ class Home extends Component {
           </Row>
           <Row>
             <Col>
-              <div className="div-characters-list fadeIn-fast-fast">
+              <div className="div-characters-list fadeIn-fast-fast d-flex justify-content-center">
                 {this.state.loading ? (
                   <Loading />
                 ) : (

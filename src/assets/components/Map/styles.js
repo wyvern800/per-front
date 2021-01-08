@@ -12,7 +12,6 @@ export const DivMap = styled.div`
 
   .box {
     height: 5%;
-    //background-image: url(http://www.clker.com/cliparts/W/0/g/a/W/E/map-pin-red.svg);
     background-position: top center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -117,51 +116,3 @@ export const DivMap = styled.div`
     left: 47%;
   }
 `;
-
-/**
- width: 100%;
-  height: 100%;
-
-  background-image: url(${imgmap});
-  background-repeat: no-repeat;
-  display: grid;
-  grid-template-columns: repeat(15, 23px);
-  grid-template-rows: repeat(10, 23px);
-  gap: 0px 0px;
-
-  grid-template-areas:
-    'a . . . . . . . . . . . . . b'
-    '. . . . . . . . . . . . . . .'
-    '. . . . . . . . . . . . . . .'
-    'c . . . . . . . . . . . . . .'
-    '. . . . . . . . . . . . . . .'
-    '. . . . . . . . . . . . . . .'
-    '. . . . . . . . . . . . . . .'
-    '. . . . . . . . . . . . . . .'
-    '. . . . . . . . . . . . . . .'
-    '. . . . . . . . . . . . . . .';
-
-  .badge {
-    height: 100%;
-    width: 100%;
-    color: gold;
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.6);
-
-    span {
-      font-size: 12px;
-    }
-  }
-
-  .a {
-    grid-area: a;
-  }
-
-  .b {
-    grid-area: b;
-  }
-
-  .c {
-    grid-area: c;
-  }
- */

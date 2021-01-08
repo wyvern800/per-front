@@ -4,7 +4,7 @@ import Loading from '../../assets/components/Loading';
 import PageHeader from '../../assets/components/PageHeader';
 import { Row, Col, Badge, Table } from 'react-bootstrap';
 import Separator from '../../assets/components/Separator';
-import Chart from '../../assets/components/Chart';
+import Info from '../../assets/components/InfoCharacter';
 import DivTitle from '../../assets/components/DivTitle';
 import Map from '../../assets/components/Map';
 import imgmap from '../../assets/map.png';
@@ -105,11 +105,7 @@ class About extends Component {
       <>
         <Row>
           <Col sm>
-            <PageHeader
-              titleOne="Personagem: "
-              titleTwo={character.name}
-              descOne="Aqui estão algumas informações"
-            />
+            <PageHeader titleOne="Personagem: " titleTwo={character.name} />
           </Col>
         </Row>
 
@@ -135,8 +131,8 @@ class About extends Component {
                             {typeof weapons === 'undefined' ||
                             weapons.length <= 0 ? (
                               <>
-                              Ainda não existem armas cadastradas para esse
-                              personagem!
+                                Ainda não existem armas cadastradas para esse
+                                personagem!
                               </>
                             ) : (
                               <>
@@ -160,30 +156,7 @@ class About extends Component {
                       <Separator height={10} />
                       <CharacterStats>
                         <DivTitle text="Infos" />
-                        <p>
-                          LP Base:
-                          <Badge variant="success">
-                            {stats.vitalityPoints}
-                          </Badge>
-                        </p>
-                        <p>
-                          EP Base:
-                          <Badge variant="info">{stats.energyPoints}</Badge>
-                        </p>
-                        <p>
-                          AP Base:
-                          <Badge variant="warning">{stats.attackPower}</Badge>
-                        </p>
-                        <p>
-                          DEF Base:
-                          <Badge variant="light">{stats.defense}</Badge>
-                        </p>
-                        <p>
-                          Tier:
-                          <Badge variant="dark">
-                            {character.characterTier}
-                          </Badge>
-                        </p>
+                        <Info />
                       </CharacterStats>
                       <Separator height={10} />
                     </LeftContainer>
@@ -204,7 +177,22 @@ class About extends Component {
                             <>
                               {skills.map((skill) => (
                                 <li key={skill.id}>
-                                  <img src={skill.skillIcon} />
+                                  <Table striped bordered hover variant="dark">
+                                    <tbody>
+                                      <tr>
+                                      <td className="text-center">Q</td>
+                                      <td className="text-center">W</td>
+                                      <td className="text-center">E</td>
+                                      <td className="text-center">R</td>
+                                      </tr>
+                                      <tr>
+                                        <td><img src={skill.skillIcon} /></td>
+                                        <td><img src={skill.skillIcon} /></td>
+                                        <td><img src={skill.skillIcon} /></td>
+                                        <td><img src={skill.skillIcon} /></td>
+                                      </tr>
+                                    </tbody>
+                                  </Table>
                                 </li>
                               ))}
                             </>
