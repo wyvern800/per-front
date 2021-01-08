@@ -7,6 +7,7 @@ import Separator from '../../assets/components/Separator';
 import Chart from '../../assets/components/Chart';
 import DivTitle from '../../assets/components/DivTitle';
 import Map from '../../assets/components/Map';
+import imgmap from '../../assets/map.png';
 
 import {
   CharacterPageWrapper,
@@ -23,6 +24,7 @@ import {
   WeaponInfo,
   WeaponsContainer,
   WeaponsList,
+  DivMap,
 } from './styles';
 
 class About extends Component {
@@ -80,6 +82,25 @@ class About extends Component {
 
     const { stats, skills, weapons } = this.state.character;
 
+    const citie = [
+      { id: 1, pos: 'map01', name: 'Beco', top: 13, left: 42 },
+      { id: 2, pos: 'map02', name: 'Est. dos Arqueiros', top: 26, left: 10 },
+      { id: 3, pos: 'map03', name: 'Templo', top: 27, left: 79 },
+      { id: 4, pos: 'map04', name: 'Avenida', top: 32, left: 57 },
+      { id: 5, pos: 'map05', name: 'Escola', top: 38, left: 33 },
+      { id: 6, pos: 'map06', name: 'Laboratorio', top: 48, left: 39 },
+      { id: 7, pos: 'map07', name: 'Hotel', top: 43, left: 13 },
+      { id: 8, pos: 'map08', name: 'Lagoa', top: 46, left: 64 },
+      { id: 9, pos: 'map9', name: 'Hospital', top: 55, left: 84 },
+      { id: 10, pos: 'map10', name: 'Praia', top: 65, left: 9 },
+      { id: 11, pos: 'map11', name: 'Floresta', top: 63, left: 34 },
+      { id: 12, pos: 'map12', name: 'Cemiterio', top: 66, left: 65 },
+      { id: 13, pos: 'map13', name: 'Bairro Nobre', top: 66, left: 65 },
+      { id: 14, pos: 'map14', name: 'Capela', top: 76, left: 53 },
+      { id: 15, pos: 'map15', name: 'Fabrica', top: 78, left: 76 },
+      { id: 16, pos: 'map16', name: 'Docas', top: 86, left: 47 },
+    ];
+
     return (
       <>
         <Row>
@@ -111,14 +132,24 @@ class About extends Component {
                           <DivTitle text="Armas" />
                           <Separator height={10} />
                           <WeaponsContainer>
-                            {weapons.map((weapon) => (
-                              <div
-                                key={weapon.id}
-                                onClick={() => this.changeWeapon(weapon.id)}
-                              >
-                                <img src={weapon.icon} />
-                              </div>
-                            ))}
+                            {typeof weapons === 'undefined' ||
+                            weapons.length <= 0 ? (
+                              <>
+                              Ainda não existem armas cadastradas para esse
+                              personagem!
+                              </>
+                            ) : (
+                              <>
+                                {weapons.map((weapon) => (
+                                  <div
+                                    key={weapon.id}
+                                    onClick={() => this.changeWeapon(weapon.id)}
+                                  >
+                                    <img src={weapon.icon} />
+                                  </div>
+                                ))}
+                              </>
+                            )}
                           </WeaponsContainer>
                         </WeaponsList>
                         <Separator height={10} />
@@ -163,8 +194,12 @@ class About extends Component {
                       <CharacterSkills>
                         <DivTitle text="Habilidades" />
                         <div>
-                          {typeof skills === 'undefined' || skills.length <= 0 ? (
-                            <>Ainda não existem skills cadastradas para esse personagem!</>
+                          {typeof skills === 'undefined' ||
+                          skills.length <= 0 ? (
+                            <>
+                              Ainda não existem skills cadastradas para esse
+                              personagem!
+                            </>
                           ) : (
                             <>
                               {skills.map((skill) => (
@@ -180,39 +215,40 @@ class About extends Component {
                       <CharacterBuilds>
                         <DivTitle text="Builds" />
                         <div className="buildsDiv">
-                        {typeof buildData === 'undefined' || buildData.length <= 0  ? (
-                          <>
-                            Ainda não existem builds desse tipo de arma para esse
-                            personagem!
-                          </>
-                        ) : (
-                          <>
-                            {
-                              <Table
-                                striped
-                                bordered
-                                hover
-                                variant="dark"
-                                responsive
-                              >
-                                <thead>
-                                  <tr>
-                                    <th>Nome</th>
-                                    <th>Descrição</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  {buildData.map((p) => (
-                                    <tr key={p.id}>
-                                      <td>{p.name}</td>
-                                      <td>{p.description}</td>
+                          {typeof buildData === 'undefined' ||
+                          buildData.length <= 0 ? (
+                            <>
+                              Ainda não existem builds desse tipo de arma para
+                              esse personagem!
+                            </>
+                          ) : (
+                            <>
+                              {
+                                <Table
+                                  striped
+                                  bordered
+                                  hover
+                                  variant="dark"
+                                  responsive
+                                >
+                                  <thead>
+                                    <tr>
+                                      <th>Nome</th>
+                                      <th>Descrição</th>
                                     </tr>
-                                  ))}
-                                </tbody>
-                              </Table>
-                            }
-                          </>
-                        )}
+                                  </thead>
+                                  <tbody>
+                                    {buildData.map((p) => (
+                                      <tr key={p.id}>
+                                        <td>{p.name}</td>
+                                        <td>{p.description}</td>
+                                      </tr>
+                                    ))}
+                                  </tbody>
+                                </Table>
+                              }
+                            </>
+                          )}
                         </div>
                       </CharacterBuilds>
                       <Separator height={10} />
@@ -224,7 +260,23 @@ class About extends Component {
                       <CharacterMap>
                         <DivTitle text="Rotas" />
                         <div>
-                          <Map buceta={selectedWeapon} />
+                          <>
+                            <DivMap>
+                              <img src={imgmap} />
+                              {citie.map((city, index) => (
+                                <div
+                                  key={index}
+                                  id={city.pos}
+                                  className={'box'}
+                                >
+                                  <span className="routeNumber">{city.id}</span>
+                                  <span className="locationName">
+                                    {city.name}
+                                  </span>
+                                </div>
+                              ))}
+                            </DivMap>
+                          </>
                         </div>
                       </CharacterMap>
                       <Separator height={10} />

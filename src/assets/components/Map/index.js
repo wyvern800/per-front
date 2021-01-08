@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { DivMap } from './styles';
 import imgmap from '../../../assets/map.png';
-import api from '../../../services/api';
 
 export default class Map extends Component {
   state = {
@@ -10,7 +9,7 @@ export default class Map extends Component {
 
   async componentDidMount() {
 
-    let citie = [
+    const citie = [
       { id: 1, pos: 'map01', name: 'Beco', top: 13, left: 42 },
       { id: 2, pos: 'map02', name: 'Est. dos Arqueiros', top: 26, left: 10 },
       { id: 3, pos: 'map03', name: 'Templo', top: 27, left: 79 },
@@ -34,7 +33,6 @@ export default class Map extends Component {
 
   render() {
     const { citiesData } = this.state;
-
 
     return (
       <>
