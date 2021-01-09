@@ -4,7 +4,19 @@ import { GiPowerLightning, GiHearts, GiZeusSword, GiCrackedShield, GiAchievement
 import Table from 'react-bootstrap/Table';
 
 export default class Info extends Component {
+  state = {
+      character: [],
+      stats: []
+  }
+
+  componentDidMount() {
+    const { theCharacter, characterStats } = this.props;
+
+    this.setState({character: theCharacter, stats: characterStats});
+  }
+
   render() {
+    const { character, stats } = this.state;
 
     return (
       <>
@@ -12,19 +24,19 @@ export default class Info extends Component {
         <Table striped bordered hover variant="dark">
           <tbody>
             <tr>
-              <td><i className="vida"><GiHearts/></i> Vida: <span>300{/** {stats.vitalityPoints} **/}</span></td>
+              <td><i className="vida"><GiHearts/></i> Vida: <span>{ stats.vitalityPoints}</span></td>
             </tr>
             <tr>
-              <td><i className="energia"><GiPowerLightning/></i> Energia: test{/** {stats.energyPoints} **/}</td>
+              <td><i className="energia"><GiPowerLightning/></i> Energia: {stats.energyPoints}</td>
             </tr>
             <tr>
-              <td><i className="poder-de-ataque"><GiZeusSword/></i> Poder de ataque: test{/** {stats.attackPower} **/}</td>
+              <td><i className="poder-de-ataque"><GiZeusSword/></i> Poder de ataque: {stats.attackPower}</td>
             </tr>
             <tr>
-              <td><i className="defesa"><GiCrackedShield/></i> Defesa: test{/** {stats.defense} **/}</td>
+              <td><i className="defesa"><GiCrackedShield/></i> Defesa: {stats.defense}</td>
             </tr>
             <tr>
-              <td><i className="tier"><GiAchievement/></i> Tier: test{/** {character.characterTier} **/}</td>
+              <td><i className="tier"><GiAchievement/></i> Tier: {character.characterTier}</td>
             </tr>
           </tbody>
         </Table>

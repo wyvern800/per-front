@@ -1,4 +1,4 @@
-import styled, { keyframes, css } from 'styled-components';
+import styled from 'styled-components';
 
 export const CharacterPageWrapper = styled.div`
   justify-content: space-evenly;
@@ -76,11 +76,25 @@ export const CharacterSkills = styled.div`
     display: flex;
     justify-content: center;
 
-    li {
+    div {
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      margin: 5px;
+
+      span {
+        font-family: 'Arial', sans-serif;
+        font-size: 12px;
+        margin-top: 29px;
+        margin-left: 27px;
+        position: absolute;
+        padding-left: 5px;
+        padding-right: 5px;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+      }
+
       img {
         width: 50px;
         height: 50px;
-        border-color: 1px solid white;
       }
     }
   }
@@ -88,6 +102,7 @@ export const CharacterSkills = styled.div`
 
 export const CharacterBuilds = styled.div`
   background-color: rgba(218, 219, 221, 0.1);
+  padding-bottom: 5px;
 
   div.buildsDiv {
     margin: 10px;
@@ -121,6 +136,7 @@ export const WeaponsContainer = styled.div`
     border: 1px solid gray;
     width: 45px;
     height: 45px;
+    margin: 5px;
 
     img {
       max-width: 43px;
@@ -129,7 +145,10 @@ export const WeaponsContainer = styled.div`
   }
 `;
 
-export const WeaponInfo = styled.div``;
+export const WeaponInfo = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 export const DivMap = styled.div`
   margin: 10px;

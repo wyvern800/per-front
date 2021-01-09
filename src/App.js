@@ -14,7 +14,7 @@ function App() {
       <BrowserRouter>
         <ScrollToTop>
           <Header />
-          <Container fluid="xl" className="min-height">
+          <Container fluid="xl" className="main-container">
             <Routes />
             <GlobalStyle />
           </Container>

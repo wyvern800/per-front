@@ -246,9 +246,10 @@ h1.infoCharName{
   opacity:0.6;
 }
 
-.min-height {
-  min-height: 65.70vh;
-  margin-bottom: 20px;
+.main-container {
+  padding-top: 25px;
+  min-height: 68.70vh;
+  margin-bottom: 25px;
 }
 
 div.card-deck {
