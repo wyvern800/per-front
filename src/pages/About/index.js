@@ -36,7 +36,7 @@ class About extends Component {
     loading: true,
     buildData: [],
     selectedBuild: [],
-    theLocations: []
+    theLocations: [],
   };
 
   /**
@@ -81,9 +81,13 @@ class About extends Component {
       selectedWeapon: theWeapon,
       loading: false,
       buildData: buildReq.data,
-      theLocations: locationsReq.data
+      theLocations: locationsReq.data,
     });
   }
+
+   contains(a, obj) {
+    return a.some(function(element){return element == obj;})
+    }
 
   /**
    * Sets the build to the state
@@ -119,7 +123,9 @@ class About extends Component {
 
     const { weaponSkill } = this.state.selectedWeapon;
 
-    /*const citie = [
+    const { locations } = this.state.selectedBuild;
+
+    const citie = [
       { id: 1, pos: 'map01', name: 'Beco', top: 13, left: 42 },
       { id: 2, pos: 'map02', name: 'Est. dos Arqueiros', top: 26, left: 10 },
       { id: 3, pos: 'map03', name: 'Templo', top: 27, left: 79 },
@@ -136,7 +142,7 @@ class About extends Component {
       { id: 14, pos: 'map14', name: 'Capela', top: 76, left: 53 },
       { id: 15, pos: 'map15', name: 'Fabrica', top: 78, left: 76 },
       { id: 16, pos: 'map16', name: 'Docas', top: 86, left: 47 },
-    ];*/
+    ];
 
     return (
       <>
@@ -165,7 +171,7 @@ class About extends Component {
                           <DivTitle text="Armas" />
                           <Separator height={10} />
                           <WeaponsContainer>
-                            {typeof weapons === undefined ||
+                            {typeof weapons === 'undefined' ||
                             weapons.length <= 0 ? (
                               <>
                                 Ainda não existem armas cadastradas para esse
@@ -174,12 +180,26 @@ class About extends Component {
                             ) : (
                               <>
                                 {weapons.map((weapon) => (
-                                  <div
-                                    key={weapon.id}
-                                    onClick={() => this.changeWeapon(weapon.id)}
+                                  <OverlayTrigger
+                                    placement="bottom"
+                                    overlay={
+                                      <Tooltip
+                                        key={`tooltip-skill-${weapon.id}`}
+                                        id={`bottom`}
+                                      >
+                                        {weapon.name}
+                                      </Tooltip>
+                                    }
                                   >
-                                    <img src={weapon.icon} />
-                                  </div>
+                                    <div
+                                      key={weapon.id}
+                                      onClick={() =>
+                                        this.changeWeapon(weapon.id)
+                                      }
+                                    >
+                                      <img src={weapon.icon} />
+                                    </div>
+                                  </OverlayTrigger>
                                 ))}
                               </>
                             )}
@@ -206,7 +226,7 @@ class About extends Component {
                       <CharacterSkills>
                         <DivTitle text="Habilidades" />
                         <div>
-                          {typeof skills === undefined || skills.length <= 0 ? (
+                          {typeof skills === 'undefined' || skills.length <= 0 ? (
                             <>
                               Ainda não existem skills cadastradas para esse
                               personagem!
@@ -246,7 +266,8 @@ class About extends Component {
                                   >
                                     {weaponSkill.name}
                                     <br />- EP: {weaponSkill.energyPoint}
-                                    <br />- Cooldown: {weaponSkill.cooldown}s<br />
+                                    <br />- Cooldown: {weaponSkill.cooldown}s
+                                    <br />
                                   </Tooltip>
                                 }
                               >
@@ -263,7 +284,7 @@ class About extends Component {
                       <CharacterBuilds>
                         <DivTitle text="Builds" />
                         <div className="buildsDiv">
-                          {typeof buildData === undefined ||
+                          {typeof buildData === 'undefined' ||
                           buildData.length <= 0 ? (
                             <>
                               Ainda não existem builds desse tipo de arma para
@@ -271,7 +292,7 @@ class About extends Component {
                             </>
                           ) : (
                             <>
-                              {typeof selectedBuild === undefined ||
+                              { typeof selectedBuild === 'undefined' ||
                               selectedBuild.length <= 0 ? (
                                 <>
                                   <>
@@ -326,13 +347,20 @@ class About extends Component {
                           <>
                             <DivMap>
                               <img src={imgmap} />
-                              {theLocations.map((city, index) => (
+                              { theLocations.map((city, index) => (
                                 <div
                                   key={index}
-                                  id={city.map}
+                                  id={city.slugMap}
                                   className={'box'}
                                 >
-                                  <span className="routeNumber">{/*city.id ID*/}</span>
+                                  <span className="routeNumber">
+
+                                    {/** Problema tá aqui, tem q arrumar */}
+                                    { typeof selectedBuild === 'undefined' ||
+                                      selectedBuild.length <= 0  ? <></> : (city.slugMap === selectedBuild.locations[index].slugMap ? <>{selectedBuild.locations[index].id}</> : <></>) }
+
+                                    {/*city.id ID*/}
+                                  </span>
                                   <span className="locationName">
                                     {city.name}
                                   </span>

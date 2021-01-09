@@ -58,7 +58,7 @@
     "historyApiFallback": true
   },
   "scripts": {
-    "dev": "webpack-dev-server --mode development",
+    "dev": "webpack-dev-server  --mode development",
     "build": "webpack --mode production"
   }
 }
