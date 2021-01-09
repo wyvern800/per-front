@@ -358,9 +358,6 @@ class About extends Component {
                                       key={`tooltip-routes-${city.id}`}
                                       id={`top`}
                                     >
-                                      {city.name}
-                                      <br />
-                                      <br />
                                       {city.description}
                                     </Tooltip>
                                   }
