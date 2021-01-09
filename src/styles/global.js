@@ -88,7 +88,7 @@ p span {
 Nav a {
   text-decoration: none;
   color: white;
-  font-size: 30px;
+  font-size: 20px;
   margin-left: 10px;
   margin-right: 10px;
   opacity: 0.6;

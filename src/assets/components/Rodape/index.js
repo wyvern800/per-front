@@ -27,7 +27,7 @@ export default class Rodape extends Component {
                 <h3>About</h3>
                 <ul>
                   <li>
-                    <a href="#">Company</a>
+                    <a href="/aboutus">Nosso Projeto</a>
                   </li>
                   <li>
                     <a href="#">Team</a>
