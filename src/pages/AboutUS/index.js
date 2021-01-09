@@ -16,6 +16,7 @@ class AboutUS extends Component {
           <div className="first-div">
             <h1>Como tudo começou...</h1>
           </div>
+          <hr className="line" />
           <div className="first-div">
             <p className="fadeIn">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -41,16 +42,16 @@ class AboutUS extends Component {
               sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
           </div>
-
+          <hr className="line" />
           <div className="team">
             <Card style={{ width: '18rem' }} className="card">
               <Card.Img variant="top" src={marcio} />
               <Card.Body>
                 <Card.Title>Marcio Lacerda</Card.Title>
-                <Card.Text>
-                  Descrição aqui!
-                </Card.Text>
-                <a href="#"><Button variant="primary">GitHub</Button></a>
+                <Card.Text>Descrição aqui!</Card.Text>
+                <a href="#">
+                  <Button variant="primary">GitHub</Button>
+                </a>
               </Card.Body>
             </Card>
 
@@ -58,10 +59,10 @@ class AboutUS extends Component {
               <Card.Img variant="top" src={marcio} />
               <Card.Body>
                 <Card.Title>Matheus Ferreira</Card.Title>
-                <Card.Text>
-                Descrição aqui!
-                </Card.Text>
-                <a href="#"><Button variant="primary">GitHub</Button></a>
+                <Card.Text>Descrição aqui!</Card.Text>
+                <a href="#">
+                  <Button variant="primary">GitHub</Button>
+                </a>
               </Card.Body>
             </Card>
           </div>

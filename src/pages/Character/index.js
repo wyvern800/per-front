@@ -40,7 +40,7 @@ class Home extends Component {
           </Row>
           <Row>
             <Col>
-              <div className="div-characters-list fadeIn-fast-fast d-flex justify-content-center">
+              <div className="div-characters-list fadeIn-fast-fast">
                 {this.state.loading ? (
                   <Loading />
                 ) : (
@@ -50,10 +50,10 @@ class Home extends Component {
                         <li key={character.id}>
                           <Link to={`/characters/${character.slug}`}>
                             <Image src={character.characterIcon} rounded />
-                          </Link>
-                          <p className="character-name fadeIn-fast-fast">
+                          <p className="character-name">
                             {character.name}
                           </p>
+                          </Link>
                         </li>
                       ))}
                     </ul>

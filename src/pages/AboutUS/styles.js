@@ -17,6 +17,11 @@ export const AboutStyle = styled.div`
     margin-top: 15px;
   }
 
+  hr {
+    background-color: yellow;
+    height: 2px;
+  }
+
   .fadeIn {
     -webkit-animation: fadeIn 4.5s ease-in-out;
     -moz-animation: fadeIn 4.5s ease-in-out;
@@ -31,8 +36,8 @@ export const AboutStyle = styled.div`
   }
 
   .card {
-    margin-right: 5px;
-    margin-left: 5px;
+    margin-right: 15px;
+    margin-left: 15px;
   }
 
   @keyframes reveal {

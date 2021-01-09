@@ -107,6 +107,10 @@ Nav a:hover{
 }
 
 /* Characters List */
+.div-characters-list ul li a {
+  text-decoration: none;
+  color: white;
+}
 .div-characters-list {
   margin-top: 30px;
 }
@@ -155,6 +159,16 @@ h1.infoCharName{
   color: white;
 }
 
+.character-name:hover {
+  animation: glow 1000ms infinite;
+}
+
+  @keyframes glow {
+    40% {
+      text-shadow: 0 0 12px white;
+      color: yellow;
+    }
+  }
 /* About character */
 /* Rodapé */
 .footer-clean {

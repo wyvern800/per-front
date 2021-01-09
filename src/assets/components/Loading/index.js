@@ -6,7 +6,7 @@ export default class Loading extends Component {
     return (
       <>
       <DivLoader>
-      <div className="loader">Loading...</div>
+      <div className="loader"></div>
       </DivLoader>
       </>
     );

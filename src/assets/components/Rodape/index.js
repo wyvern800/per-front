@@ -46,9 +46,6 @@ export default class Rodape extends Component {
                   <li>
                     <a href="#">Marcio Lacerda</a>
                   </li>
-                  <li>
-                    <a href="#">Benefits</a>
-                  </li>
                 </ul>
               </div>
               <div className="col-lg-3 item social">
@@ -61,7 +58,7 @@ export default class Rodape extends Component {
                 <a href="#">
                   <FaPatreon />
                 </a>
-                <p className="copyright">Dharoka © 2020</p>
+                <p className="copyright">© DHAROKA.NET. All Rights Reserved. Eternal Return: Black Survival and all related logos are trademarks of Nimble Neuron, inc. or its affiliates.</p>
               </div>
             </div>
           </div>
