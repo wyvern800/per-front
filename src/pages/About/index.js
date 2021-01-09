@@ -85,9 +85,11 @@ class About extends Component {
     });
   }
 
-   contains(a, obj) {
-    return a.some(function(element){return element == obj;})
-    }
+  contains(a, obj) {
+    return a.some(function (element) {
+      return element == obj;
+    });
+  }
 
   /**
    * Sets the build to the state
@@ -226,7 +228,8 @@ class About extends Component {
                       <CharacterSkills>
                         <DivTitle text="Habilidades" />
                         <div>
-                          {typeof skills === 'undefined' || skills.length <= 0 ? (
+                          {typeof skills === 'undefined' ||
+                          skills.length <= 0 ? (
                             <>
                               Ainda não existem skills cadastradas para esse
                               personagem!
@@ -292,7 +295,7 @@ class About extends Component {
                             </>
                           ) : (
                             <>
-                              { typeof selectedBuild === 'undefined' ||
+                              {typeof selectedBuild === 'undefined' ||
                               selectedBuild.length <= 0 ? (
                                 <>
                                   <>
@@ -347,24 +350,46 @@ class About extends Component {
                           <>
                             <DivMap>
                               <img src={imgmap} />
-                              { theLocations.map((city, index) => (
-                                <div
-                                  key={index}
-                                  id={city.slugMap}
-                                  className={'box'}
+                              {theLocations.map((city, index) => (
+                                <OverlayTrigger
+                                  placement="top"
+                                  overlay={
+                                    <Tooltip
+                                      key={`tooltip-routes-${city.id}`}
+                                      id={`top`}
+                                    >
+                                      {city.name}
+                                      <br />
+                                      <br />
+                                      {city.description}
+                                    </Tooltip>
+                                  }
                                 >
-                                  <span className="routeNumber">
+                                  <div
+                                    key={index}
+                                    id={city.slugMap}
+                                    className={'box'}
+                                  >
+                                    <span className="routeNumber">
+                                      {/** Problema tá aqui, tem q arrumar */}
+                                      {typeof selectedBuild === 'undefined' ||
+                                      selectedBuild.length <= 0 ? (
+                                        <></>
+                                      ) : city.slugMap ===
+                                        selectedBuild.locations[index]
+                                          .slugMap ? (
+                                        <>{selectedBuild.locations[index].id}</>
+                                      ) : (
+                                        <></>
+                                      )}
 
-                                    {/** Problema tá aqui, tem q arrumar */}
-                                    { typeof selectedBuild === 'undefined' ||
-                                      selectedBuild.length <= 0  ? <></> : (city.slugMap === selectedBuild.locations[index].slugMap ? <>{selectedBuild.locations[index].id}</> : <></>) }
-
-                                    {/*city.id ID*/}
-                                  </span>
-                                  <span className="locationName">
-                                    {city.name}
-                                  </span>
-                                </div>
+                                      {/*city.id ID*/}
+                                    </span>
+                                    <span className="locationName">
+                                      {city.name}
+                                    </span>
+                                  </div>
+                                </OverlayTrigger>
                               ))}
                             </DivMap>
                           </>
