@@ -15,8 +15,9 @@ export default class Header extends Component {
           </Navbar.Brand>
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav activeKey={window.location.pathname}>
-              <Link to="/">Home</Link>
-              <Link to="/characters">Personagens</Link>
+              <Link to="/">&gt; Home</Link>
+              <Link to="/characters">&gt; Personagens</Link>
+              <Link to="/highscores">&gt; Highscores</Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>

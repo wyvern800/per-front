@@ -36,6 +36,7 @@ class About extends Component {
     loading: true,
     buildData: [],
     selectedBuild: [],
+    buildLocations: [],
     theLocations: [],
   };
 
@@ -54,6 +55,7 @@ class About extends Component {
       selectedWeapon: foundWeapon,
       buildData: foundWeaponBuilds,
       selectedBuild: [],
+      buildLocations: []
     });
 
     return console.log(foundWeapon.name);
@@ -98,17 +100,21 @@ class About extends Component {
   async viewBuild(id) {
     const { selectedWeapon } = this.state;
 
-    console.log(`open build: ${id}`);
-
     const buildReq = await api.get(
       `builds/view/${selectedWeapon.id}/build?buildId=${id}`
     );
 
     this.setState({ selectedBuild: buildReq.data });
 
-    const { selectedBuild } = this.state;
+    const locsReq = await api.get(
+      `locations/view/${id}`
+    );
 
-    console.log(selectedBuild.name);
+    this.setState({buildLocations: locsReq.data});
+
+    const { buildLocations } = this.state;
+
+    console.log(buildLocations);
   }
 
   render() {
@@ -119,15 +125,14 @@ class About extends Component {
       buildData,
       selectedBuild,
       theLocations,
+      buildLocations,
     } = this.state;
 
     const { stats, skills, weapons } = this.state.character;
 
     const { weaponSkill } = this.state.selectedWeapon;
 
-    const { locations } = this.state.selectedBuild;
-
-    const citie = [
+    /*const citie = [
       { id: 1, pos: 'map01', name: 'Beco', top: 13, left: 42 },
       { id: 2, pos: 'map02', name: 'Est. dos Arqueiros', top: 26, left: 10 },
       { id: 3, pos: 'map03', name: 'Templo', top: 27, left: 79 },
@@ -144,7 +149,7 @@ class About extends Component {
       { id: 14, pos: 'map14', name: 'Capela', top: 76, left: 53 },
       { id: 15, pos: 'map15', name: 'Fabrica', top: 78, left: 76 },
       { id: 16, pos: 'map16', name: 'Docas', top: 86, left: 47 },
-    ];
+    ];*/
 
     return (
       <>
@@ -350,12 +355,12 @@ class About extends Component {
                           <>
                             <DivMap>
                               <img src={imgmap} />
-                              {theLocations.map((city, index) => (
+                              {buildLocations.map((city, index) => (
                                 <OverlayTrigger
                                   placement="top"
                                   overlay={
                                     <Tooltip
-                                      key={`tooltip-routes-${city.id}`}
+                                      key={`tooltip-routes-${city.slugMap}`}
                                       id={`top`}
                                     >
                                       {city.description}
@@ -363,25 +368,25 @@ class About extends Component {
                                   }
                                 >
                                   <div
-                                    key={index}
+                                    key={city.id}
                                     id={city.slugMap}
                                     className={'box'}
                                   >
+
+                                    {typeof selectedBuild === 'undefined' || selectedBuild.length <= 0 ?
+                                    <>{/*Se for undefined, isso acontece*/}</> :
+                                    <>
                                     <span className="routeNumber">
-                                      {/** Problema tá aqui, tem q arrumar */}
+
                                       {typeof selectedBuild === 'undefined' ||
                                       selectedBuild.length <= 0 ? (
                                         <></>
-                                      ) : city.slugMap ===
-                                        selectedBuild.locations[index]
-                                          .slugMap ? (
-                                        <>{selectedBuild.locations[index].id}</>
-                                      ) : (
-                                        <></>
-                                      )}
+                                      ) : (typeof buildLocations[index] === 'undefined' ? <></> :
+                                        <>{buildLocations[index].displayOrder}</>)}
 
                                       {/*city.id ID*/}
                                     </span>
+                                    </>}
                                     <span className="locationName">
                                       {city.name}
                                     </span>

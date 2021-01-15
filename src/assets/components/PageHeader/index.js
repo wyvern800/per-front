@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { HeaderWrapper } from './styles';
 
 export default class PageHeader extends Component {
   async componentDidMount() {}
@@ -8,8 +9,8 @@ export default class PageHeader extends Component {
 
     return (
       <>
-        <div className="box-home">
-          <div className="box-text">
+        <HeaderWrapper>
+          <div>
             <span className="fadeIn-fast">
               {titleOne} <span className="pink">{titleTwo}</span>
             </span>
@@ -18,7 +19,7 @@ export default class PageHeader extends Component {
               <span className="gold"> {descTwo}</span>
             </p>
           </div>
-        </div>
+        </HeaderWrapper>
       </>
     );
   }

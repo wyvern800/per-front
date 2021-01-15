@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import background from '../assets/background.jpg';
 
-
 export default createGlobalStyle`
 * {
   font-family: 'Viga', sans-serif;
@@ -64,14 +63,6 @@ body, html {
 
 span {
   font-size: 50px;
-}
-
-.pink {
-  color: pink;
-}
-
-.gold {
-  color: gold;
 }
 
 p span {
@@ -268,12 +259,6 @@ h1.infoCharName{
 
 div.card-deck {
   margin-top: 70px;
-}
-
-.box-text{
-  text-align: center;
-  color: white;
-  transition: width 2s;
 }
 
 .box-characters-list{

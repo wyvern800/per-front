@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Character from "./pages/Character";
 import AboutUS from "./pages/AboutUS";
+import Highscores from './pages/Highscores'
 
 export default function Routes() {
   return (
@@ -12,6 +13,7 @@ export default function Routes() {
         <Route path="/" exact component={Home} />
         <Route path="/characters" exact component={Character} />
         <Route path="/characters/:slug" component={About} />
+        <Route path="/highscores" component={Highscores} />
         <Route path="/aboutus" exact component={AboutUS} />
     </Switch>
   );
