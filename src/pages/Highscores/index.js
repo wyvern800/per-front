@@ -5,7 +5,9 @@ import Button from 'react-bootstrap/Button';
 import PageHeader from '../../assets/components/PageHeader';
 import SearchBarPlayers from '../../assets/components/SearchBarPlayers';
 import Table from 'react-bootstrap/Table';
-import Pagination from 'react-bootstrap/Pagination'
+import Pagination from '../../assets/components/Pagination';
+import Loading from '../../assets/components/Loading';
+import paginationFactory from 'react-bootstrap-table2-paginator';
 
 import {
   HighscoresPageWrapper,
@@ -18,24 +20,41 @@ import {
 
 export default class Highscores extends Component {
   state = {
+    scoreMode: 1,
     players: [],
-    pagination: [],
+    loading: false,
   };
 
-  async componentDidMount() {
-    const response = await erbsApi.get(`rank/top/0/1`, {
-      headers: {
-        'x-api-key': `${process.env.ERBS_API_TOKEN}`,
-      },
-    });
+  componentDidMount() {
+    const getPlayers = async () => {
+      this.setState({ loading: true });
+      const { scoreMode } = this.state;
 
-    this.setState({ players: response.data });
+      const response = await erbsApi.get(`rank/top/1/${scoreMode}`, {
+        headers: {
+          'x-api-key': `${process.env.ERBS_API_TOKEN}`,
+        },
+      });
 
-    console.log(this.state.players);
+      this.setState({ players: response.data.topRanks, loading: false });
+
+      console.log(this.state.players);
+    };
+    getPlayers();
+  }
+
+  handleSoloClick(scoreMode) {
+    console.log('Changed score to :' + scoreMode);
   }
 
   render() {
-    return (
+    const { players, loading } = this.state;
+
+    return loading ? (
+      <>
+        <Loading />
+      </>
+    ) : (
       <>
         <Row>
           <Col sm>
@@ -54,9 +73,15 @@ export default class Highscores extends Component {
             </Col>
             <Col>
               <GameModeFilter>
-                <Button variant="light">Solos</Button>
-                <Button variant="light">Duos</Button>
-                <Button variant="light">Trios</Button>
+                <Button variant="light" onClick={() => handleSoloClick(1)}>
+                  Solos
+                </Button>
+                <Button variant="light" onClick={() => handleSoloClick(2)}>
+                  Duos
+                </Button>
+                <Button variant="light" onClick={() => handleSoloClick(3)}>
+                  Trios
+                </Button>
               </GameModeFilter>
             </Col>
           </Row>
@@ -68,37 +93,20 @@ export default class Highscores extends Component {
                     <tr>
                       <th>#</th>
                       <th>Username</th>
-                      <th>League</th>
-                      <th>Points</th>
+                      <th>MMR</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Arenque</td>
-                      <td>Master</td>
-                      <td>1.200.300</td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Jacob</td>
-                      <td>Master</td>
-                      <td>1.100.000</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Arenque</td>
-                      <td>Master</td>
-                      <td>1.000.000</td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>Dharoka</td>
-                      <td>Master</td>
-                      <td>999.999</td>
-                    </tr>
+                    {players.map((player) => (
+                      <tr key={player.userNum}>
+                        <td>{player.rank}</td>
+                        <td>{player.nickname}</td>
+                        <td>{player.mmr}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </Table>
+                <BootstrapTable keyField='userNum' data={ players } columns={ ["#", "Rank", "Nickname", "MMR"] } pagination={ paginationFactory() } />
               </HighscoresListDiv>
             </Col>
             <Col>
