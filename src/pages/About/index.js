@@ -328,8 +328,8 @@ class About extends Component {
                               ) : (
                                 <>
                                   <div>
-                                    <p><h1>{ build.name }</h1></p>
-                                    <p>{ build.bigDescription }</p>
+                                    <p><h1>{ selectedBuild.name }</h1></p>
+                                    <p>{ selectedBuild.bigDescription }</p>
                                   </div>
                                 </>
                               )}
