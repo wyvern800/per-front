@@ -251,14 +251,14 @@ class About extends Component {
                                         id={`bottom`}
                                       >
                                         {skill.name}
-                                        <br />- EP: {skill.energyPoint}
-                                        <br />- Cooldown: {skill.cooldown}s
+                                        <br />EP: {skill.energyPoint}
+                                        <br />Cooldown: {skill.cooldown}s
                                         <br />
                                       </Tooltip>
                                     }
                                   >
                                     <div key={skill.id}>
-                                      <span>{skill.key}</span>
+                                      <span>{(skill.key !== "PASSIVE" ? skill.key : "P")}</span>
                                       <img src={skill.skillIcon} />
                                     </div>
                                   </OverlayTrigger>
@@ -305,18 +305,12 @@ class About extends Component {
                                 <>
                                   <>
                                     <Table
-                                      striped
                                       bordered
                                       hover
                                       variant="dark"
                                       responsive
                                     >
-                                      <thead>
-                                        <tr>
-                                          <th>Nome</th>
-                                          <th>Descrição</th>
-                                        </tr>
-                                      </thead>
+
                                       <tbody>
                                         {buildData.map((p) => (
                                           <tr
