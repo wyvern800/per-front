@@ -328,8 +328,8 @@ class About extends Component {
                               ) : (
                                 <>
                                   <div>
-                                    A build vai aparecer aqui quando ser
-                                    selecinada na lista
+                                    <p><h1>{ build.name }</h1></p>
+                                    <p>{ build.bigDescription }</p>
                                   </div>
                                 </>
                               )}
