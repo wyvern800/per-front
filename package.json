@@ -56,11 +56,8 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "3.7.1"
   },
-  "devServer": {
-    "historyApiFallback": true
-  },
   "scripts": {
-    "dev": "webpack-dev-server  --mode development",
+    "dev": "webpack-dev-server --history-api-fallback --mode development",
     "build": "webpack --mode production"
   }
 }

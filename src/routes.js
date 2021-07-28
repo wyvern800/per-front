@@ -10,7 +10,7 @@ import Highscores from './pages/Highscores'
 export default function Routes() {
   return (
     <Switch>
-        <Route path="/" exact component={Home} />
+        <Route exact path='/' component={Home}/>
         <Route path="/characters" exact component={Character} />
         <Route path="/characters/:slug" component={About} />
         <Route path="/highscores" component={Highscores} />
